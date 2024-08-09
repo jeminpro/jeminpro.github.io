@@ -6,6 +6,7 @@ const article = defineCollection({
 	schema: z.object({
 		title: z.string(),
 		description: z.string(),
+		category: z.enum(['Architect', 'Back End', 'Dev Ops', 'DIY', 'Front End', 'General', 'Temp']),
 		// tags: z.array(z.enum(['Front End','Back End','DIY'])),
 		// tags: z.array(z.string()),
 		publishedDate: z.coerce.date(),	// Transform string to Date object

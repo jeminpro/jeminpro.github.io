@@ -1,7 +1,8 @@
 ---
-title: '.NET Core consuming API'
-description: 'Lorem ipsum dolor sit amet'
-publishedDate: '2020-07-22'
+title: .NET Core consuming API
+description: One of the common task in a web application is to call web API’s, it could be either external API’s or internal API’s i.e. Web tier calling the APP tier.
+publishedDate: 2020-07-22
+category: Back End
 ---
 
 One of the common task in a web application is to call web API’s, it could be either external API’s or internal API’s i.e. Web tier calling the APP tier.
@@ -9,7 +10,8 @@ One of the common task in a web application is to call web API’s, it could be 
 In this post we will go through how to consume WEB API in .NET Core using a demo TO DO application, the source code is hosted in GitHub at [CoreApiDemo](https://github.com/jeminpro/CoreApiDemo) repository.
 
 ## Demo Application Overview
-It is a .NET Core 3.1 solution with two applications. API project CoreApi.WebApi which would normally run in APP tier and Web UI project CoreApi.WebUi which would normally run in Web tier. Additionally we have common classes in CoreApi.Common library project.
+
+It is a .NET Core 3.1 solution with two applications. API project *CoreApi.WebApi* which would normally run in APP tier and Web UI **project CoreApi.WebUi** which would normally run in Web tier. Additionally we have common classes in CoreApi.Common library project.
 
 The demo application lists the TO DO items in a browser, in the WebUi project the html is in the razor pages i.e. Pages/Index.cshtml, its corresponding JavaScript file in wwwroot/js/toDoList.js will request the API’s within WebUi project which intern requests API’s in WebApi.
 
@@ -19,9 +21,9 @@ Note that to run the application using visual studio make sure to start both Web
 
 ## HTTP requests using HttpClientFactory
 
-HttpClientFactory is a default way of consuming API services in .NET Core, there are several consumption patterns as briefed in Make HTTP requests using IHttpClientFactoryin ASP.NET Core. The recommended method is to use Typed clients pattern which provides a central location for accessing all API methods per client. Below is a CoreApiService class in Clients folder that has all the different methods that API service offers. Note that base url is read from appsettings.json in the constructor.
+HttpClientFactory is a default way of consuming API services in .NET Core, there are several consumption patterns as briefed in [Make HTTP requests using IHttpClientFactoryin ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-3.1). The recommended method is to use Typed clients pattern which provides a central location for accessing all API methods per client. Below is a CoreApiService class in Clients folder that has all the different methods that API service offers. Note that base url is read from appsettings.json in the constructor.
 
-```c
+```csharp
 public class CoreApiService
 {
 	public HttpClient Client { get; }
@@ -90,10 +92,9 @@ public class CoreApiService
 	}
 }
 ```
-
 The API client class is registered in startup as highlighted below.
 
-```c
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
 	services.AddRazorPages();
@@ -105,7 +106,7 @@ public void ConfigureServices(IServiceCollection services)
 
 And the methods are invoked from the controller i.e. TodoController.cs as below.
 
-```c
+```csharp
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -169,8 +170,7 @@ namespace CoreApi.WebUi.Controllers
 
 To further simplify the API clients requests and avoid separate client service class implementation, add the nuget package “System.Net.Http.Json” to the WebUi project (or the project from where you want to consume API request) and register named client api in startup as below.
 
-
-```c
+```csharp
 public void ConfigureServices(IServiceCollection services)
 {
 	//named client api
@@ -185,8 +185,7 @@ public void ConfigureServices(IServiceCollection services)
 
 The package “System.Net.Http.Json” offers extension methods for HttpClient for most common HTTP verbs such as Get, Post, Put. In cases where it currently doesn’t offer for some verbs such as Delete, Patch then use SendAsync method by generating HttpRequestMessage. Below is the code for TodoSimpleController.
 
-
-```c
+```csharp
 [ApiController]
 [Route("[controller]")]
 public class TodoSimpleController : Controller
@@ -239,4 +238,3 @@ public class TodoSimpleController : Controller
 	}
 }
 ```
-
