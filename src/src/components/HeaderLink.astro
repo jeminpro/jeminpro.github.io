@@ -1,7 +1,7 @@
 ---
-import type { HTMLAttributes } from 'astro/types';
+import type { HTMLAttributes } from "astro/types";
 
-type Props = HTMLAttributes<'a'>;
+type Props = HTMLAttributes<"a">;
 
 const { href, class: className, ...props } = Astro.props;
 
@@ -16,6 +16,26 @@ const isActive = href === pathname;
 // console.log("href",href);
 ---
 
-<a href={href} class:list={[className, { 'selected-menu-item': isActive }]} {...props}>
+<a
+	href={href}
+	class:list={[className, { "selected-menu-item": isActive }]}
+	{...props}
+>
 	<slot />
 </a>
+
+<style>
+
+	
+	a {
+		text-decoration: none;
+		color: #fff;
+		padding: 0.25em .75em;
+	}
+
+	.selected-menu-item {
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		display: inline-block;
+	}
+</style>

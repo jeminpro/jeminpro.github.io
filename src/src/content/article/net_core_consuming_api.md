@@ -23,7 +23,7 @@ Note that to run the application using visual studio make sure to start both Web
 
 HttpClientFactory is a default way of consuming API services in .NET Core, there are several consumption patterns as briefed in [Make HTTP requests using IHttpClientFactoryin ASP.NET Core](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/http-requests?view=aspnetcore-3.1). The recommended method is to use Typed clients pattern which provides a central location for accessing all API methods per client. Below is a CoreApiService class in Clients folder that has all the different methods that API service offers. Note that base url is read from appsettings.json in the constructor.
 
-```csharp
+```csharp Title="CoreApiService.cs"
 public class CoreApiService
 {
 	public HttpClient Client { get; }

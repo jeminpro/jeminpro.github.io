@@ -2,6 +2,7 @@
 import { type CollectionEntry, getCollection } from 'astro:content';
 import Layout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
+import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
 	const posts = await getCollection('article');
@@ -61,6 +62,8 @@ const { Content } = await post.render();
 	</style>
 	<article>
 		<div class="prose">
+			
+			<BreadCrumbs></BreadCrumbs>
 			<div class="title">
 				<div class="date">
 					<FormattedDate date={publishedDate} />

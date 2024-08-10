@@ -1,3 +1,15 @@
+# Notes
+
+## Code blocks
+
+For code blocs we are using [Expressive Code](https://expressive-code.com/key-features/syntax-highlighting/) plugin as it offers various features 
+
+- Syntax highlighting 
+- Editor & Terminal Frames
+- Line highlighting along with insert and delete line highlight
+- Various themes
+- Optional plugins for line number and collapsable section
+
 # Astro Starter Kit: Blog
 
 ```sh

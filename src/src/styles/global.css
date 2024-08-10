@@ -84,10 +84,7 @@ a:hover {
 	color: var(--accent);
 }
 p {
-	margin-bottom: 1em;
-}
-.prose p {
-	margin-bottom: 2em;
+	margin-bottom: 1rem;
 }
 textarea {
 	width: 100%;
@@ -161,4 +158,8 @@ hr {
 
 .d-block {
 	display: block;
+}
+
+.expressive-code{
+	margin-bottom: 1.5rem;
 }

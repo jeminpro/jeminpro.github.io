@@ -1,0 +1,9 @@
+---
+
+let subPaths = Astro.url.pathname.match(/[^\/]+/g)
+
+console.log('subpaths',subPaths)
+---
+
+<a href="/">Home</a>
+{subPaths?.map(subPath => <a href={subPath}>{subPath}</a>)}
