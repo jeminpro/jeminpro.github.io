@@ -1,9 +1,40 @@
 ---
+const pathSegments = Astro.url.pathname.split('/').filter(Boolean);
+const breadcrumbs = pathSegments.map((segment, index) => {
+  const href = `/${pathSegments.slice(0, index + 1).join('/')}`;
+  return { label: segment, href: index === pathSegments.length - 1 ? undefined : href };
+});
 
-let subPaths = Astro.url.pathname.match(/[^\/]+/g)
+const showBreadCrumbs = breadcrumbs && breadcrumbs.length > 1;
 
-console.log('subpaths',subPaths)
+const chevron = '<svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="sc-7a9d79d2-1 hlFFVn"><polyline points="9 18 15 12 9 6"></polyline></svg>'
+
+//console.log('breadcrumbs',breadcrumbs)
 ---
+{
 
-<a href="/">Home</a>
-{subPaths?.map(subPath => <a href={subPath}>{subPath}</a>)}
+showBreadCrumbs && 
+<div class="bread-crumbs"> 
+    <a href="/">Home</a>
+    {breadcrumbs.map(item => item.href && <span> <span class="chevron-icon" set:html={chevron}></Fragment> <a href={item.href}>{item.label}</a></span>)}
+</div>
+}
+
+<style>
+    .bread-crumbs{
+        font-size: 1rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    a:hover {
+        color: #000;
+    }
+
+    .chevron-icon{
+        margin: 0 .25rem;
+    }
+</style>
