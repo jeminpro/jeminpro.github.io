@@ -1,7 +1,7 @@
 ---
 title: TypeScript - A Deep Dive with a Quick Reference Guide
 description: TypeScript is Superset of JavaScript (i.e. adding new features on top of JavaScript) with syntax for types. It helps in catching errors during build time and therefore reducing the bugs in the applications. This article is a quick reference guide on type script main features with examples.
-publishedDate: 2020-07-22
+publishedDate: '2020-07-22'
 category: Front End
 ---
 

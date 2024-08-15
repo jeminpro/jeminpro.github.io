@@ -1,7 +1,7 @@
 ---
 title: Animation on scroll using intersection observer
 description: When I was designing my portfolio page, I want to bring little life to the page by adding some animation when some elements are visible in the timeline, there are several libraries that could be used to achieve it like AOC, ScrollReveal, etc. But I want something that is native so I can customize it to my choice. Then I came across the Javascript inbuilt functionality “Intersection Observer API” which could easily achieve my requirement and it is quite a useful API to use in some of my future requirements. Let’s dive into this API.
-publishedDate: 2020-06-03
+publishedDate: '2020-06-03'
 category: Front End
 ---
 

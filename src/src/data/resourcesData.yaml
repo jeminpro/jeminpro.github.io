@@ -1,0 +1,186 @@
+resources:
+
+- category: My opensource
+  description: Some open source applications that I have created.
+  links:
+  - name: Linkley
+    url: https://linkley.jeminpro.com/board/demo
+    description: |
+     A productive web application for organising bookmarks and a must have tool to be used as your home page.
+
+     It is created with React as a front end, node js as a backend API with MongoDB database. This application is automatically deployed i.e CI/CD to Google cloud app engine.  
+  - name: Battleship game
+    url: https://codepen.io/jemin/pen/LXzogE
+    description: |
+     A fun game written in react and my toddler son is addicted to it. 
+     
+     For full-page view visit this [link](https://codepen.io/jemin/full/LXzogE)
+  - name: Base64 converter
+    url: https://github.com/jeminpro/Base64Converter
+    description: |
+     Quick and easy to use windows application for converting base64 to a file or file to base64. Unlike online converters, this has no file size limit.  
+  - name: Post lite
+    url: https://github.com/jeminpro/PostLite
+    description: |
+     It is a lightweight portable windows app for testing the HTTP POST request. Mainly built to test on servers where you don’t need to install anything as it is a single executable file.  
+  - name: Ping web
+    url: https://github.com/jeminpro/PingWeb
+    description: |
+     PingWeb is a windows tool to ping your website at a specified time for checking availability and response time
+
+
+- category: Learning
+  description: The very best learning resources
+  links:
+  - name: Refactoring guru
+    url: https://refactoring.guru/
+    description: |
+     Design patterns and refactoring
+  - name: Free code camp
+    url: https://www.youtube.com/channel/UC8butISFwT-Wl7EV0hUK0BQ
+    description: |
+     Free courses on every aspect of development, for a full certified courses visit their website.
+  - name: JavaScript Info
+    url: http://javascript.info/
+    description: |
+     JavaScript tutorial from basics to advanced topics.
+  - name: Scrimba
+    url: https://scrimba.com/
+    description: |
+     Hands-on online coding courses with some of the best tutors.
+  - name: IAmTimCorey (YouTube)
+    url: https://www.youtube.com/user/IAmTimCorey
+    description: |
+     A youtube channel for backend development with C#
+  - name: Kevin Powell (YouTube)
+    url: https://www.youtube.com/user/KepowOb 
+    description: |
+     A youtube channel for design and front end
+  - name: Emmanuel Ohans (Blog)
+    url: https://www.freecodecamp.org/news/author/emmanuel/
+    description: |
+     His articles are fun to read and they are mostly about fronted development, might also worth checking his website [ohansemmanuel.com](https://www.ohansemmanuel.com/)
+  - name: Taniarascia (Blog)
+    url: https://www.taniarascia.com/guides
+    description: |
+     She mostly writes articles on front end development and it is very easy to follow.
+  - name: Modern CSS (Blog)
+    url: https://moderncss.dev/
+    description: |
+     Articles on Modern CSS Solutions for Old CSS Problems
+  - name: Every layout
+    url: https://every-layout.dev/
+    description: |
+     CSS layouts
+
+- category: Front-end tools
+  description: Online web designing tools
+  links:
+  - name: Codepen
+    url: https://codepen.io/
+    description: |
+     It allows you to write code in a browser, and see the results you type.
+  - name: Can I Use
+    url: https://caniuse.com/
+    description: |
+     Check browser support for modern web technologies
+  - name: Coolhue
+    url: https://webkul.github.io/coolhue/?2.0
+    description: |
+     Gradient palette
+  - name: Coolors
+    url: https://coolors.co/palettes
+    description: |
+     Color palettes
+  - name: Jsonviewer
+    url: https://codebeautify.org/jsonviewer
+    description: |
+     Format JSON file and view in tree structure
+  - name: Vectr
+    url: https://vectr.com/new
+    description: |
+     Online vector SVG file editor
+  - name: Google fonts
+    url: https://fonts.google.com/
+    description: |
+     Open-source fonts
+  - name: Flexbox
+    url: https://flexbox.help/
+    description: |
+     As there are some confusing properties in using CSS flexbox. This little playground comes in handy. Another alternative is from [scotch](https://demos.scotch.io/visual-guide-to-css3-flexbox-flexbox-playground/demos/).
+  - name: Pixlr
+    url: https://pixlr.com/x/
+    description: |
+     Online photo editor
+  - name: Gradient Magic
+    url: https://www.gradientmagic.com/
+    description: |
+     A Free Gallery of Fantastic and Unique CSS Gradients
+  - name: Animista
+    url: https://animista.net/
+    description: |
+     For generating CSS animation
+  - name: CSS Gradient
+    url: https://cssgradient.io/
+    description: |
+     Generate CSS gradients
+  - name: CSS Icons
+    url: https://css.gg/
+    description: |
+     Free CSS, SVG Icons
+
+- category: Back-end tools
+  description: Online tools useful for backend
+  links:
+  - name: Debuggex
+    url: https://www.debuggex.com/
+    description: |
+     Debugging regular expression
+  - name: Online coding compiler
+    url: https://www.tutorialspoint.com/codingground.htm
+    description: |
+     Collection of different programming coding compilers.
+  - name: Rapid API
+    url: https://rapidapi.com/
+    description: |
+     Collection of thousands of APIs.
+  - name: Omni calculator
+    url: https://www.omnicalculator.com/
+    description: |
+     A huge list of calculators
+
+- category: Tools in general
+  description: Online tools useful in general
+  links: 
+  - name: Omni calculator
+    url: https://www.omnicalculator.com/
+    description: |
+     A huge list of calculators
+  - name: Keybr
+    url: https://www.keybr.com/
+    description: |
+     Learn and improve your typing speed and accuracy.
+  - name: Cheatography
+    url: https://cheatography.com/
+    description: |
+     Huge collection of cheat sheets, another alternative is [devhints](https://devhints.io/)
+  
+- category: Favorite blogs
+  description: There is a huge list of blogs and here are some of my favorites.
+  links: 
+  - name: Smashing magazine
+    url: https://www.smashingmagazine.com/
+    description: |
+     Articles on web designing and developers
+  - name: CSS tricks
+    url: https://css-tricks.com/
+    description: |
+     A must-read article for front end developers and designers to catch up with new development and best practices.
+  - name: Alligator
+    url: https://alligator.io/
+    description: |
+     Frontend web development
+  - name: Code maze
+    url: https://code-maze.com/latest-posts-on-code-maze/
+    description: |
+     NET Core oriented blog  

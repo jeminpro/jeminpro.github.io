@@ -1,7 +1,7 @@
 ---
 title: Github actions to deploy WordPress on google cloud
 description: One of the best ways to increase productivity in a software product is to automate manual or repetitive jobs. In this blog post, we will explore how easy it is to deploy WordPress theme changes to our server, and best of all it is free with GitHub as it offers generous free tier features.
-publishedDate: 2020-06-30
+publishedDate: '2020-06-30'
 category: Dev Ops
 ---
 

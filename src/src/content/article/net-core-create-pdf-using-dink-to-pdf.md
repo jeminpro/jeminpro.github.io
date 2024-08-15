@@ -1,7 +1,7 @@
 ---
 title: .NET Core create pdf using DinkToPdf
 description: One of the most common requirements in a web application is to generate the PDF document either for an invoice, reporting, or any other purpose. As developers are familiar with HTML it would make sense to convert HTML to PDF instead of learning the framework specific language. The open-source solution for it is using the NuGet package DinkToPdf which is a .NET Core wrapper for wkhtmltopdf. As most often the PDF documents are generated in the backend service i.e. Web API, we will explore how to implement it in the most structured way. The source code for this demo is in the GitHub CorePdfDemo repository.
-publishedDate: 2020-06-04
+publishedDate: '2020-06-04'
 category: Back End
 ---
 

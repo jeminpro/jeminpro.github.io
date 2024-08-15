@@ -1,7 +1,7 @@
 ---
 title: OpenID Connect an identity layer
 description: OpenId Connect is an identity protocol that allows users to sign into multiple websites with a single account. It is an Identity layer on top of OAuth 2.0 specification and its API friendly using REST and JSON message flow.
-publishedDate: 2019-02-03
+publishedDate: '2019-02-03'
 category: Architect
 ---
 

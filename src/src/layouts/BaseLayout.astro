@@ -1,10 +1,16 @@
 ---
-import BaseHead from '../components/BaseHead.astro';
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
 
-const { title, description } = Astro.props;
+interface Props {
+	title: string;
+	description: string;
+	isMainLarge?: Boolean;
+	bodyClasses?: string;
+}
 
+const { title, description, isMainLarge, bodyClasses } = Astro.props;
 ---
 
 <html lang="en">
@@ -12,14 +18,14 @@ const { title, description } = Astro.props;
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
+	<body class={bodyClasses}>
 		<Header />
-		<main>
+		<main class={isMainLarge && "main-large"}>
 			<slot />
 		</main>
 		<Footer />
 		<script>
-			import site from '../scripts/site.js';
+			import site from "../scripts/site.js";
 			site().init();
 		</script>
 	</body>

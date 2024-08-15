@@ -1,0 +1,243 @@
+---
+import Layout from "../layouts/BaseLayout.astro";
+import fs from "fs";
+import path from "path";
+import yaml from "yaml";
+
+const filePath = path.resolve("./src/data/me.yaml");
+const fileContents = fs.readFileSync(filePath, "utf8");
+const meData = yaml.parse(fileContents);
+
+//console.log(meData);
+---
+
+<Layout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+	isMainLarge={true}
+	bodyClasses="page-me"
+>
+<h1>My Story</h1>
+<div class="timeline-wrap">
+	{
+		meData.stories.map((story) => (
+			<div class="timeline-item visible-animation">
+				<h4 class="year">{story.year}</h4>
+				<div class="description">
+					<h4>{story.title}</h4>
+					<p>{story.description}</p>
+				</div>
+			</div>
+		))
+	}
+</div>
+
+	
+</Layout>
+
+<style is:global>
+.page-me {
+    background-image: linear-gradient(23deg, rgba(202, 202, 202, 0.02) 0%, rgba(202, 202, 202, 0.02) 13%, transparent 13%, transparent 80%, rgba(11, 11, 11, 0.02) 80%, rgba(11, 11, 11, 0.02) 100%), linear-gradient(42deg, rgba(98, 98, 98, 0.02) 0%, rgba(98, 98, 98, 0.02) 36%, transparent 36%, transparent 77%, rgba(252, 252, 252, 0.02) 77%, rgba(252, 252, 252, 0.02) 100%), linear-gradient(286deg, rgba(173, 173, 173, 0.02) 0%, rgba(173, 173, 173, 0.02) 2%, transparent 2%, transparent 12%, rgba(59, 59, 59, 0.02) 12%, rgba(59, 59, 59, 0.02) 100%), linear-gradient(77deg, rgba(87, 87, 87, 0.02) 0%, rgba(87, 87, 87, 0.02) 18%, transparent 18%, transparent 55%, rgba(247, 247, 247, 0.02) 55%, rgba(247, 247, 247, 0.02) 100%), linear-gradient(90deg, rgb(255, 255, 255), rgb(255, 255, 255));
+}
+</style>
+
+
+<style>
+	
+
+    .timeline-wrap {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        width: 80%;
+        max-width: 900px;
+        margin: auto;
+        position: relative;
+        font-family: Inter;
+
+        &:before {
+            content: '';
+            display: block;
+            width: 6px;
+            margin-left: -3px;
+            position: absolute;
+            top: 0;
+            left: 28px;
+            bottom: 0;
+            background-repeat: repeat;
+            background-color: #536A79;
+        }
+
+        .timeline-item {
+            width: 100%;
+            max-width: 550px;
+            padding-top: 5px;
+            padding-left: 50px;
+            background-size: cover;
+            background-position: 50%;
+            text-align: left;
+            position: relative;
+            line-height: 1rem;
+            font-size: 1rem;
+
+            
+        }
+    }
+
+	.timeline-item:hover {
+                .year {
+                    animation: woble_left .5s;
+                }
+
+                .description {
+                    animation: woble_right .5s;
+                }
+            }
+
+            .year {
+                position: absolute;
+                left: -55px;
+                width: 80px;
+                text-align: center;
+                padding: 5px 3px;
+                background-color: #D35244;
+                color: #ffffff;
+                font-size: 1rem;
+                font-weight: 500;
+            }
+
+            .description {
+                font-weight: 300;
+
+                h4 {
+                    font-weight: 500;
+                    margin: 1rem 0 0 0;
+                }
+            }
+
+
+    @media (max-width: 400px) {
+        .timeline-wrap {
+            &:before {
+                left: -3px;
+            }
+
+            .timeline-item {
+                padding-left: 10px;
+
+                .year {
+                    text-transform: uppercase;
+                    position: static;
+                    margin: -5px 0 10px -10px;
+                }
+            }
+        }
+    }
+
+    @media (min-width: 768px) {
+        .timeline-wrap {
+            &:before {
+                left: 50%;
+            }
+
+            .timeline-item {
+                width: 50%;
+                padding-left: 0;
+
+                .year {
+                    position: absolute;
+                    top: 0px;
+                    left: -100px;
+                    width: 80px;
+                    text-align: center;
+                    padding: 5px 3px;
+                    left: -40px;
+                }
+
+                &:nth-of-type(2n+1) {
+                    text-align: right;
+                    padding-right: 50px;
+
+                    .year {
+                        left: auto;
+                        right: -40px;
+                    }
+                }
+
+                &:nth-of-type(2n+2) {
+                    align-self: flex-end;
+                    padding-left: 50px;
+                    width: 50%;
+                }
+
+                &:hover {
+                    .description {
+                        animation: woble_right .5s;
+                    }
+
+                    .year {
+                        animation: woble_left .5s;
+                    }
+
+                }
+
+                &:nth-of-type(2n+1):hover {
+
+                    .description {
+                        animation: woble_left .5s;
+                    }
+
+                    .year {
+                        animation: woble_right .5s;
+                    }
+                }
+
+            }
+        }
+    }
+
+    @media (min-width: 981px) {
+        .et_pb_column {
+            margin-right: 5.5%;
+            width: 100%;
+            margin-bottom: 0;
+        }
+    }
+
+    .visible-animation:nth-of-type(2n+1) {
+        animation: woble_left 0.8s;
+    }
+
+    .visible-animation:nth-of-type(2n+2) {
+        animation: woble_right 0.8s;
+    }
+
+	@keyframes woble_right {
+  0%,
+  100% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(25px); } }
+
+@keyframes woble_left {
+  0%,
+  100% {
+    transform: translateX(0); }
+  50% {
+    transform: translateX(-25px); } }
+
+@keyframes woble_top {
+  0%,
+  100% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(-25px); } }
+
+@keyframes woble_bottom {
+  0%,
+  100% {
+    transform: translateY(0); }
+  50% {
+    transform: translateY(25px); } }
+</style>

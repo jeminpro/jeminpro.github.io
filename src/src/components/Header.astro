@@ -5,35 +5,35 @@ import SocialLinks from "./SocialLinks.astro";
 
 const menuItems = [
 	{
-		name:"Articles",
-		path:"/articles"
+		name: "Articles",
+		path: "/articles",
 	},
 	{
-		name:"Guides",
-		path:"/guides"
+		name: "Guides",
+		path: "/guides",
 	},
 	{
-		name:"Links",
-		path:"/links"
-	}
-]
+		name: "Links",
+		path: "/links",
+	},
+];
 ---
 
 <header class="site-header">
 	<nav class="nav-main">
 		<a href="/" class="site-logo" title="home">
-			<img
-				class="logo-image"
-				src="/images/JPLogo.svg"
-				alt={SITE_TITLE}
-			/>
+			<img class="logo-image" src="/images/JPLogo.svg" alt={SITE_TITLE} />
 		</a>
 		<div class="nav-links-desktop">
 			{
-				menuItems.map(menuItem => <HeaderLink href={menuItem.path}>{menuItem.name}</HeaderLink>)
+				menuItems.map((menuItem) => (
+					<HeaderLink href={menuItem.path}>
+						{menuItem.name}
+					</HeaderLink>
+				))
 			}
 		</div>
-		<SocialLinks className="social-desktop"></SocialLinks>
+		<SocialLinks className="social-desktop" />
 
 		<button class="mobile-burger-button" type="button">
 			<svg
@@ -43,22 +43,38 @@ const menuItems = [
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
 			>
-				<line y1="2" x2="24" y2="2" 	stroke="currentColor" stroke-width="2"></line>
-				<line y1="9" x2="24" y2="9" 	stroke="currentColor" stroke-width="2"></line>
-				<line y1="16" x2="24" y2="16" 	stroke="currentColor" stroke-width="2"></line>
+				<line
+					y1="2"
+					x2="24"
+					y2="2"
+					stroke="currentColor"
+					stroke-width="2"></line>
+				<line
+					y1="9"
+					x2="24"
+					y2="9"
+					stroke="currentColor"
+					stroke-width="2"></line>
+				<line
+					y1="16"
+					x2="24"
+					y2="16"
+					stroke="currentColor"
+					stroke-width="2"></line>
 			</svg>
 		</button>
 	</nav>
 	<nav class="nav-mobile d-none">
-		<HeaderLink href="/articles" class="mobile-menu-item">Articles</HeaderLink>
+		<HeaderLink href="/articles" class="mobile-menu-item"
+			>Articles</HeaderLink
+		>
 		<HeaderLink href="/guides" class="mobile-menu-item">Guides</HeaderLink>
 		<HeaderLink href="/links" class="mobile-menu-item">Links</HeaderLink>
-		<SocialLinks className="social-mobile"></SocialLinks>
+		<SocialLinks className="social-mobile" />
 	</nav>
 </header>
 
 <style>
-
 	.site-header {
 		font-family: "Dosis", sans-serif;
 		position: relative;
@@ -75,7 +91,15 @@ const menuItems = [
 		max-width: 100ch;
 		box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.4);
 	}
-	
+
+	.card-header .card-header-title {
+		text-align: center;
+		font-size: 1.5rem;
+		margin: 1rem 0;
+		font-weight: 600;
+		font-family: "Dosis", sans-serif;
+	}
+
 	.site-logo {
 		display: flex;
 		align-items: center;
@@ -109,13 +133,13 @@ const menuItems = [
 		border-bottom: 1px solid rgb(229, 231, 235);
 		border-radius: 0px;
 		font-size: 1.25rem;
-	}	
+	}
 
 	.nav-links-desktop {
 		display: none;
 	}
 
-	@media (min-width: 640px) {
+	@media (min-width: 750px) {
 		.mobile-burger-button {
 			display: none;
 		}
@@ -130,7 +154,7 @@ const menuItems = [
 			align-items: center;
 			flex-grow: 1;
 			align-items: center;
-			gap: 4rem;
+			gap: 2rem;
 			font-size: 1.25rem;
 		}
 
