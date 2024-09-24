@@ -1,11 +1,11 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
+import Header from "../components/Nav/Header.astro";
 import Footer from "../components/Footer.astro";
 
 interface Props {
 	title: string;
-	description: string;
+	description?: string;
 	isMainLarge?: Boolean;
 	bodyClasses?: string;
 }

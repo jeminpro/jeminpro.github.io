@@ -1,9 +1,8 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import Layout from "../../layouts/BaseLayout.astro";
 
-const posts = (await getCollection("article")).sort(
+const snippets = (await getCollection("snippet")).sort(
 	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
 );
 
@@ -11,10 +10,10 @@ const { pathname } = Astro.url;
 
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title="Snippets" description="Code snippets">
 	<section>
 		{
-			posts.map((post) => (
+			snippets.map((post) => (
 				<article>
 					<h4 class="title">
 						<a href={`${pathname}/${post.slug}`}>
