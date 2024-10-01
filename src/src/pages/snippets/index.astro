@@ -14,8 +14,7 @@ const uniqueLangs = [
 
 <Layout title="Snippets" description="Code snippets">
 	<div class="lang-select">
-		<a href="">All</a>
-		{uniqueLangs.map((lang) => <a href="">{lang}</a>)}
+		<button>All</button>{uniqueLangs.map((lang) => <button>{lang}</button>)}
 	</div>
 
 	<section>
@@ -68,12 +67,16 @@ const uniqueLangs = [
 		text-decoration: none;
 		color: inherit;
 	}
+
+	.lang-select button{
+		margin-right: 5px;
+	}
 </style>
 
 <script>
 	const snipElements = document.querySelectorAll(".snip");
 
-	document.querySelectorAll(".lang-select a").forEach((langLink : Element) =>
+	document.querySelectorAll(".lang-select button").forEach((langLink : Element) =>
 		langLink.addEventListener("click", (e) => {
 			e.preventDefault();
 			snipElements.forEach((snipElement: HTMLElement) => {
