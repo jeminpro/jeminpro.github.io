@@ -185,7 +185,7 @@ hr {
 
 /* custom */
 .d-none {
-	display: none;
+	display: none !important;
 }
 
 .d-block {

@@ -7,79 +7,84 @@ const snippets = (await getCollection("snippet")).sort(
 );
 
 const { pathname } = Astro.url;
-
+const uniqueLangs = [
+	...new Set(snippets.map((snippet) => snippet.data.lang)),
+].sort();
 ---
 
 <Layout title="Snippets" description="Code snippets">
+	<div class="lang-select">
+		<a href="">All</a>
+		{uniqueLangs.map((lang) => <a href="">{lang}</a>)}
+	</div>
+
 	<section>
 		{
-			snippets.map((post) => (
-				<article>
-					<h4 class="title">
-						<a href={`${pathname}/${post.slug}`}>
-							{post.data.title}
-						</a>
-					</h4>
-					<p>{post.data.description}</p>
-					<footer>
-						<a
-							class="read-more"
-							href={`${pathname}/${post.slug}`}
-						>
-							READ MORE
-						</a>
-					</footer>
-				</article>
+			snippets.map((snippet) => (
+				<a
+					class="snip"
+					data-lang={snippet.data.lang}
+					href={`${pathname}/${snippet.slug}`}
+				>
+					<small>{snippet.data.lang}</small>
+
+					<h4 class="title">{snippet.data.title}</h4>
+
+					<p>{snippet.data.description}</p>
+				</a>
 			))
 		}
 	</section>
 </Layout>
 
 <style>
-	article {
+	.snip {
+		display: block;
 		border: 1px solid #dad9d9;
 		border-radius: 5px;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
 		margin-bottom: 30px;
 		padding: 0.5rem 3rem;
+		position: relative;
+	}
+
+	.snip small {
+		position: absolute;
+		top: 0;
+		right: 0;
+		margin-right: 5px;
+	}
+
+	.snip:hover {
+		box-shadow: rgba(0, 0, 0, 0.3) 0 4px 2px -2px;
 	}
 
 	.title {
 		padding-top: 10px;
-	}
-
-	.title a {
 		color: #d35244;
-		text-decoration: none;
 	}
 
-	footer {
-		border-top: 1px solid #e6e6e6;
-		padding: 0.9rem 0;
-	}
-
-	.read-more {
-		color: #d35244;
-		font-size: 1rem;
-		height: 1.5rem;
-		letter-spacing: 1px;
-		line-height: 1.5rem;
-		text-align: center;
-		text-transform: uppercase;
-		position: relative;
-		white-space: nowrap;
-		border: 1px solid #d35244;
-		border-radius: 3px;
-		padding: 0.2rem 0.5rem;
+	a {
 		text-decoration: none;
-	}
-
-	.read-more:hover {
-		text-decoration: none;
-		background: #d35244;
-		color: #ffffff;
-		transition:
-			background ease-in-out 250ms,
-			transform ease-in-out 250ms;
+		color: inherit;
 	}
 </style>
+
+<script>
+	const snipElements = document.querySelectorAll(".snip");
+
+	document.querySelectorAll(".lang-select a").forEach((langLink : Element) =>
+		langLink.addEventListener("click", (e) => {
+			e.preventDefault();
+			snipElements.forEach((snipElement: HTMLElement) => {
+				if (langLink.textContent === "All") {
+					snipElement.classList.remove("d-none");
+				} else if (langLink.textContent === snipElement.dataset.lang) {
+					snipElement.classList.remove("d-none");
+				} else {
+					snipElement.classList.add("d-none");
+				}
+			});
+		})
+	);
+</script>

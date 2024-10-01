@@ -1,7 +1,7 @@
 ---
-title: Module pattern
+title: JS Test 3
 lang: JavaScript
-description: Starter template with revealing module pattern
+description: Bla bla bal
 publishedDate: '2024-09-04'
 ---
 
