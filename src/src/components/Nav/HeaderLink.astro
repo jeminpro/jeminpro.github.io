@@ -6,14 +6,17 @@ type Props = HTMLAttributes<"a">;
 const { href, class: className, ...props } = Astro.props;
 
 const { pathname } = Astro.url;
+const firstSegment = pathname.split('/').slice(0, 2).join('/');
 
-const isActive = href === pathname;
+const isActive = href === firstSegment;
 //const subpath = pathname.match(/[^\/]+/g);
 //const isActive = href === pathname || href === '/' + subpath?.[0];
 
-// console.log("pathname",pathname);
+
 // console.log("subpath",subpath);
-// console.log("href",href);
+//   console.log("pathname",pathname);
+//   console.log("href",href);
+
 ---
 
 <a
@@ -31,6 +34,11 @@ const isActive = href === pathname;
 		text-decoration: none;
 		color: #fff;
 		padding: 0.25em .75em;
+	}
+
+	a.override-color{
+		color: black;
+		text-decoration: underline;
 	}
 
 	.selected-menu-item {

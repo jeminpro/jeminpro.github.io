@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+
+// Fetch all articles from the collection
+const articles = await getCollection('article', ({data}) => { return !data.draft});
+// Get a list of unique categories
+const categories = [...new Set(articles.map(article => article.data.category))].sort();
+---
+
+<div class="category-list">
+	<a class="category-item" href="/articles">All</a> 
+{
+	categories.map((category) => (
+		<a class="category-item" href={`/articles/category/${category}`}>{category}</a> 
+		))
+}
+</div>
+
+<style>
+	.category-list{
+		display: flex;
+	}
+
+	.category-item{
+		display: inline-block;
+		margin: 0 10px;
+	}
+</style>

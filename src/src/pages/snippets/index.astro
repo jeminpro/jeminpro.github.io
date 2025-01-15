@@ -1,15 +1,11 @@
 ---
-import { getCollection } from "astro:content";
+import { getPublishedSnippets } from '../../utils/helper';
 import Layout from "../../layouts/BaseLayout.astro";
 
-const snippets = (await getCollection("snippet")).sort(
-	(a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
-);
+const snippets = (await getPublishedSnippets()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
 
 const { pathname } = Astro.url;
-const uniqueLangs = [
-	...new Set(snippets.map((snippet) => snippet.data.lang)),
-].sort();
+const uniqueLangs = [...new Set(snippets.map((snippet) => snippet.data.lang))].sort();
 ---
 
 <Layout title="Snippets" description="Code snippets">
@@ -20,15 +16,9 @@ const uniqueLangs = [
 	<section>
 		{
 			snippets.map((snippet) => (
-				<a
-					class="snip"
-					data-lang={snippet.data.lang}
-					href={`${pathname}/${snippet.slug}`}
-				>
-					<small>{snippet.data.lang}</small>
-
+				<a class="snip" data-lang={snippet.data.lang} href={`${pathname}/${snippet.slug}`}>
+					<small class="lang">{snippet.data.lang}</small>
 					<h4 class="title">{snippet.data.title}</h4>
-
 					<p>{snippet.data.description}</p>
 				</a>
 			))
@@ -47,7 +37,7 @@ const uniqueLangs = [
 		position: relative;
 	}
 
-	.snip small {
+	.snip .lang {
 		position: absolute;
 		top: 0;
 		right: 0;

@@ -1,18 +1,16 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getPublishedSnippets } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
-	const snippets = await getCollection('snippet');
+	const snippets = await getPublishedSnippets();
 	return snippets.map((snippet) => ({
 		params: { slug: snippet.slug },
 		props: snippet,
 	}));
 }
-
-type Props = CollectionEntry<'snippet'>;
 
 const snippet = Astro.props;
 const { title, lang, description, publishedDate, updatedDate } = snippet.data;

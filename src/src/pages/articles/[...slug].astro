@@ -1,18 +1,17 @@
 ---
-import { type CollectionEntry, getCollection } from 'astro:content';
+import { getPublishedArticles } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
-	const posts = await getCollection('article');
+	const posts = await getPublishedArticles();
 	return posts.map((post) => ({
 		params: { slug: post.slug },
 		props: post,
 	}));
 }
 
-type Props = CollectionEntry<'article'>;
 
 const post = Astro.props;
 const { title, description, publishedDate, updatedDate } = post.data;
@@ -46,7 +45,6 @@ const { Content } = await post.render();
 		.title {
 			margin-bottom: 1em;
 			padding: 1em 0;
-			text-align: center;
 			line-height: 1;
 		}
 		.title h1 {
@@ -65,6 +63,9 @@ const { Content } = await post.render();
 			
 			<BreadCrumbs></BreadCrumbs>
 			<div class="title">
+				
+				<h1>{title}</h1>
+
 				<div class="date">
 					<FormattedDate date={publishedDate} />
 					{
@@ -75,7 +76,8 @@ const { Content } = await post.render();
 						)
 					}
 				</div>
-				<h1>{title}</h1>
+
+
 				<hr />
 			</div>
 			<Content />
