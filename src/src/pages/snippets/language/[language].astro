@@ -1,0 +1,42 @@
+---
+import { getPublishedSnippets } from '../../../utils/helper';
+import Layout from '../../../layouts/BaseLayout.astro';
+import SnippetItem from '../../../components/SnippetItem.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import CategoryList from '../../../components/CategoryList.astro';
+import SnippetLanguageList from '../../../components/SnippetLanguageList.astro';
+
+export async function getStaticPaths() {
+  // Fetch all articles from the collection
+  const snippets = await getPublishedSnippets();
+
+  // Get a list of unique categories
+  const languages = [...new Set(snippets.map(snippet => snippet.data.lang))];	//todo filter non draft and move it to heler class
+
+  // Generate paths for each category
+  return languages.map(language => 
+  ({
+    params: { language }
+  }));
+}
+
+const { language } = Astro.params;
+// Fetch all articles from the collection
+const snippets = await getPublishedSnippets();
+// Filter articles by the current category
+const filteredSnippets = snippets.filter(snippet => snippet.data.lang === language);
+
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+
+	<SnippetLanguageList />
+
+	<section>
+		{
+			filteredSnippets.map((snippet) => (
+				<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />			
+			))
+		}
+	</section>
+</Layout>

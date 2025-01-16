@@ -16,7 +16,7 @@ const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedD
 	<section>
 		{
 			articles.map((article) => (
-				<ArticleItem article={{ ...article.data, slug: article.slug }} />			
+				<ArticleItem article={{ ...article.data, slug: article.slug }} />
 			))
 		}
 	</section>

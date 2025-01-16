@@ -1,83 +1,22 @@
 ---
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from "../../layouts/BaseLayout.astro";
+import SnippetItem from '../../components/SnippetItem.astro';
+import SnippetLanguageList from '../../components/SnippetLanguageList.astro';
 
 const snippets = (await getPublishedSnippets()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
-
-const { pathname } = Astro.url;
-const uniqueLangs = [...new Set(snippets.map((snippet) => snippet.data.lang))].sort();
 ---
 
 <Layout title="Snippets" description="Code snippets">
-	<div class="lang-select">
-		<button>All</button>{uniqueLangs.map((lang) => <button>{lang}</button>)}
-	</div>
+
+	<SnippetLanguageList />
 
 	<section>
 		{
 			snippets.map((snippet) => (
-				<a class="snip" data-lang={snippet.data.lang} href={`${pathname}/${snippet.slug}`}>
-					<small class="lang">{snippet.data.lang}</small>
-					<h4 class="title">{snippet.data.title}</h4>
-					<p>{snippet.data.description}</p>
-				</a>
+				<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />
 			))
 		}
 	</section>
 </Layout>
 
-<style>
-	.snip {
-		display: block;
-		border: 1px solid #dad9d9;
-		border-radius: 5px;
-		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
-		margin-bottom: 30px;
-		padding: 0.5rem 3rem;
-		position: relative;
-	}
-
-	.snip .lang {
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin-right: 5px;
-	}
-
-	.snip:hover {
-		box-shadow: rgba(0, 0, 0, 0.3) 0 4px 2px -2px;
-	}
-
-	.title {
-		padding-top: 10px;
-		color: #d35244;
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.lang-select button{
-		margin-right: 5px;
-	}
-</style>
-
-<script>
-	const snipElements = document.querySelectorAll(".snip");
-
-	document.querySelectorAll(".lang-select button").forEach((langLink : Element) =>
-		langLink.addEventListener("click", (e) => {
-			e.preventDefault();
-			snipElements.forEach((snipElement: HTMLElement) => {
-				if (langLink.textContent === "All") {
-					snipElement.classList.remove("d-none");
-				} else if (langLink.textContent === snipElement.dataset.lang) {
-					snipElement.classList.remove("d-none");
-				} else {
-					snipElement.classList.add("d-none");
-				}
-			});
-		})
-	);
-</script>

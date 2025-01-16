@@ -12,22 +12,23 @@ const articleSchema = z.object({
 	// tags: z.array(z.string()),
 });
 
+const snippetSchema = z.object({
+	title: z.string(),
+	lang: z.enum(['CSS', 'JavaScript', 'C Sharp', 'SQL']),
+	description: z.string().optional(),
+	publishedDate: z.coerce.date(),
+	updatedDate: z.coerce.date().optional(),
+	draft: z.boolean().optional()
+});
+
 const articleColleection = defineCollection({
 	type: 'content',
-	schema: articleSchema,
+	schema: articleSchema
 });
 
 const snippetCollection = defineCollection({
 	type: 'content',
-	schema: z.object({
-		title: z.string(),
-		lang: z.enum(['CSS', 'JavaScript', 'C Sharp', 'SQL']),
-		description: z.string().optional(),
-		publishedDate: z.coerce.date(),
-		updatedDate: z.coerce.date().optional(),
-		draft: z.boolean().optional()
-
-	}),
+	schema: snippetSchema
 });
 
 export const collections = { 
@@ -36,8 +37,8 @@ export const collections = {
 };
 
 
-// Define the base type inferred from the schema
 type ArticleData = z.infer<typeof articleSchema>;
-
-// Extend the type to include `slug`
 export type Article = ArticleData & { slug: string };
+
+type SnippeteData = z.infer<typeof snippetSchema>;
+export type Snippet = SnippeteData & { slug: string };
