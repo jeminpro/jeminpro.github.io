@@ -2,7 +2,7 @@
 import { getPublishedArticles } from '../../utils/helper';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import Layout from "../../layouts/BaseLayout.astro";
-import CategoryList from '../../components/CategoryList.astro';
+import ArticleCategoryList from '../../components/ArticleCategoryList.astro';
 import ArticleItem from '../../components/ArticleItem.astro';
 
 const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
@@ -11,7 +11,7 @@ const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedD
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 
-	<CategoryList />
+	<ArticleCategoryList />
 
 	<section>
 		{

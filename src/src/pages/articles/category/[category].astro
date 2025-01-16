@@ -3,7 +3,7 @@ import { getPublishedArticles } from '../../../utils/helper';
 import Layout from '../../../layouts/BaseLayout.astro';
 import ArticleItem from '../../../components/ArticleItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
-import CategoryList from '../../../components/CategoryList.astro';
+import ArticleCategoryList from '../../../components/ArticleCategoryList.astro';
 
 export async function getStaticPaths() {
   // Fetch all articles from the collection
@@ -30,7 +30,7 @@ const filteredArticles = articles.filter(article => article.data.category === ca
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 
-	<CategoryList />
+	<ArticleCategoryList />
 
 	<section>
 		{
