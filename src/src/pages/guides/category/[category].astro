@@ -1,0 +1,42 @@
+---
+import { getPublishedGuides } from '../../../utils/helper';
+import Layout from '../../../layouts/BaseLayout.astro';
+import GuideItem from '../../../components/Guide/GuideItem.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
+import GuideCategoryList from '../../../components/Guide/GuideCategoryList.astro';
+
+export async function getStaticPaths() {
+  // Fetch all articles from the collection
+  const guides = await getPublishedGuides();
+
+  // Get a list of unique categories
+  const categories = [...new Set(guides.map(article => article.data.category))];	//todo filter non draft and move it to heler class
+
+  // Generate paths for each category
+  return categories.map(category => 
+  ({
+    params: { category }
+  }));
+}
+
+// Get the category from the params
+const { category } = Astro.params;
+// Fetch all articles from the collection
+const guides = await getPublishedGuides();
+// Filter articles by the current category
+const filteredGuides = guides.filter(guide => guide.data.category === category);
+
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+
+	<GuideCategoryList />
+
+	<section>
+		{
+			filteredGuides.map((guide) => (
+				<GuideItem guide={{ ...guide.data, slug: guide.slug }} />			
+			))
+		}
+	</section>
+</Layout>

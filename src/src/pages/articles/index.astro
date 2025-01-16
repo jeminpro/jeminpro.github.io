@@ -2,8 +2,8 @@
 import { getPublishedArticles } from '../../utils/helper';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import Layout from "../../layouts/BaseLayout.astro";
-import ArticleCategoryList from '../../components/ArticleCategoryList.astro';
-import ArticleItem from '../../components/ArticleItem.astro';
+import ArticleCategoryList from '../../components/Article/ArticleCategoryList.astro';
+import ArticleItem from '../../components/Article/ArticleItem.astro';
 
 const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
 

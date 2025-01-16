@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 }
 
 const snippet = Astro.props;
-const { title, lang, description, publishedDate, updatedDate } = snippet.data;
+const { title, category, description, publishedDate, updatedDate } = snippet.data;
 const { Content } = await snippet.render();
 ---
 
@@ -37,7 +37,7 @@ const { Content } = await snippet.render();
 				<h1>{title}</h1>
 				<hr />				
 			</div>
-			<span>{lang}</span>
+			<span>{category}</span>
 			<p>{description}</p>
 
 			<Content />

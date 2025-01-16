@@ -1,9 +1,9 @@
 ---
 import { getPublishedArticles } from '../../../utils/helper';
 import Layout from '../../../layouts/BaseLayout.astro';
-import ArticleItem from '../../../components/ArticleItem.astro';
+import ArticleItem from '../../../components/Article/ArticleItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
-import ArticleCategoryList from '../../../components/ArticleCategoryList.astro';
+import ArticleCategoryList from '../../../components/Article/ArticleCategoryList.astro';
 
 export async function getStaticPaths() {
   // Fetch all articles from the collection

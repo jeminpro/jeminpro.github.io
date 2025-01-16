@@ -1,5 +1,5 @@
 ---
-import type { Snippet } from '../content/config';
+import type { Snippet } from '../../content/config';
 
 // Define props with the Article type
 interface Props {
@@ -10,7 +10,7 @@ const { snippet: snippet } = Astro.props;
 ---
 
 <a class="snip" href={`/snippets/${snippet.slug}`}>
-	<small class="lang">{snippet.lang}</small>
+	<small class="category">{snippet.category}</small>
 	<h4 class="title">{snippet.title}</h4>
 	<p>{snippet.description}</p>
 </a>
@@ -27,7 +27,7 @@ const { snippet: snippet } = Astro.props;
 		position: relative;
 	}
 
-	.snip .lang {
+	.snip .category {
 		position: absolute;
 		top: 0;
 		right: 0;
@@ -48,7 +48,7 @@ const { snippet: snippet } = Astro.props;
 		color: inherit;
 	}
 
-	.lang-select button{
+	.category-select button{
 		margin-right: 5px;
 	}
 </style>

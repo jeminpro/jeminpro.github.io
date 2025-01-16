@@ -1,0 +1,26 @@
+---
+import { getPublishedSnippets } from '../../utils/helper';
+
+const snippets = await getPublishedSnippets();
+const categories = [...new Set(snippets.map(snippet => snippet.data.category))].sort();
+---
+
+<div class="snippet-category-list">
+	<a class="snippet-category-item" href="/snippets">All</a> 
+{
+	categories.map((category) => (
+		<a class="snippet-category-item" href={`/snippets/category/${category}`}>{category}</a> 
+		))
+}
+</div>
+
+<style>
+	.snippet-category-list{
+		display: flex;
+	}
+
+	.snippet-category-item{
+		display: inline-block;
+		margin: 0 10px;
+	}
+</style>

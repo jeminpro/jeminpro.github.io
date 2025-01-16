@@ -1,22 +1,21 @@
 ---
-import { getPublishedArticles } from '../../utils/helper';
+import { getPublishedGuides } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
-	const posts = await getPublishedArticles();
-	return posts.map((post) => ({
-		params: { slug: post.slug },
-		props: post,
+	const guides = await getPublishedGuides();
+	return guides.map((guide) => ({
+		params: { slug: guide.slug },
+		props: guide,
 	}));
 }
 
+const guide = Astro.props;
+const { title, description, publishedDate, updatedDate } = guide.data;
 
-const article = Astro.props;
-const { title, description, publishedDate, updatedDate } = article.data;
-
-const { Content } = await article.render();
+const { Content } = await guide.render();
 ---
 
 <Layout title={title} description={description}>

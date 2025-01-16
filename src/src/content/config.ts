@@ -3,7 +3,7 @@ import { defineCollection, z } from 'astro:content';
 const articleSchema = z.object({
 	title: z.string(),
 	description: z.string(),
-	category: z.enum(['Architect', 'Back End', 'Dev Ops', 'DIY', 'Front End', 'General', 'Temp']),		
+	category: z.enum(['Architect', 'Back End', 'Dev Ops', 'DIY', 'Front End', 'General']),		
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
 	draft: z.boolean().optional()
@@ -14,8 +14,17 @@ const articleSchema = z.object({
 
 const snippetSchema = z.object({
 	title: z.string(),
-	lang: z.enum(['CSS', 'JavaScript', 'C Sharp', 'SQL']),
+	category: z.enum(['C Sharp', 'CSS', 'JavaScript', 'SQL']),
 	description: z.string().optional(),
+	publishedDate: z.coerce.date(),
+	updatedDate: z.coerce.date().optional(),
+	draft: z.boolean().optional()
+});
+
+const guideSchema = z.object({
+	title: z.string(),
+	description: z.string(),
+	category: z.enum(['C Sharp', 'CSS', 'JavaScript', 'SQL']),		
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
 	draft: z.boolean().optional()
@@ -31,14 +40,23 @@ const snippetCollection = defineCollection({
 	schema: snippetSchema
 });
 
+const guideCollection = defineCollection({
+	type: 'content',
+	schema: guideSchema
+});
+
 export const collections = { 
 	'article': articleColleection,
 	'snippet': snippetCollection,
+	'guide': guideCollection,
 };
 
 
 type ArticleData = z.infer<typeof articleSchema>;
 export type Article = ArticleData & { slug: string };
 
-type SnippeteData = z.infer<typeof snippetSchema>;
-export type Snippet = SnippeteData & { slug: string };
+type SnippetData = z.infer<typeof snippetSchema>;
+export type Snippet = SnippetData & { slug: string };
+
+type GuideData = z.infer<typeof guideSchema>;
+export type Guide = GuideData & { slug: string };

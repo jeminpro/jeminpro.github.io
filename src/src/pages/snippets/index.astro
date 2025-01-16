@@ -1,15 +1,15 @@
 ---
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from "../../layouts/BaseLayout.astro";
-import SnippetItem from '../../components/SnippetItem.astro';
-import SnippetLanguageList from '../../components/SnippetLanguageList.astro';
+import SnippetItem from '../../components/Snippet/SnippetItem.astro';
+import SnippetCategoryList from '../../components/Snippet/SnippetCategoryList.astro';
 
 const snippets = (await getPublishedSnippets()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
 ---
 
 <Layout title="Snippets" description="Code snippets">
 
-	<SnippetLanguageList />
+	<SnippetCategoryList />
 
 	<section>
 		{

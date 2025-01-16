@@ -1,0 +1,23 @@
+---
+import { getPublishedGuides } from '../../utils/helper';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
+import Layout from "../../layouts/BaseLayout.astro";
+import GuideCategoryList from '../../components/Guide/GuideCategoryList.astro';
+import GuideItem from '../../components/Guide/GuideItem.astro';
+
+const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
+
+---
+
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+
+	<GuideCategoryList />
+
+	<section>
+		{
+			guides.map((guide) => (
+				<GuideItem guide={{ ...guide.data, slug: guide.slug }} />
+			))
+		}
+	</section>
+</Layout>
