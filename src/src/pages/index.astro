@@ -1,38 +1,66 @@
 ---
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
-import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { getPublishedArticles } from '../utils/helper';
+import { getPublishedGuides } from '../utils/helper';
+
+import ArticleItem from '../components/Article/ArticleItem.astro';
+import GuideItem from '../components/Guide/GuideItem.astro';
+
+const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()).slice(0, 5);
+const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()).slice(0, 5);
+
 ---
 
-<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION} >
-	<h1>🧑‍🚀 Hello, Astronaut!</h1>
+<BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<h1>Hello!</h1>
 	<p>
-		Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-		template serves as a lightweight, minimally-styled starting point for anyone looking to build
-		a personal website, blog, or portfolio with Astro.
+		My name is Jemin, and I am a full stack .NET developer and AI
+		enthusiast. I've been building applications with .NET for over a decade,
+		but lately, I've been diving deep into the AI rabbit hole. I created
+		this blog so I can share the things I learn in the hope of both helping
+		others and deepening my knowledge of the topics I write about.
 	</p>
 	<p>
-		This template comes with a few integrations already configured in your
-		<code>astro.config.mjs</code> file. You can customize your setup with
-		<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-		React, or Vue to your project.
-	</p>
-	<p>Here are a few ideas on how to get started with the template:</p>
-	<ul>
-		<li>Edit this page in <code>src/pages/index.astro</code></li>
-		<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-		<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-		<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-		<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-	</ul>
-	<p>
-		Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-			>read the docs
-		</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
+		Welcome to my spot on the web for writing, guides, code snippet, and
+		anything else I want to put out there.
 	</p>
 	<p>
-		Looking for a blog template with a bit more personality? Check out <a
-			href="https://github.com/Charca/astro-blog-template"
-			>astro-blog-template
-		</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
+		My site has no ads, no tracking, no sponsored posts, and no paywall. My
+		motivation for the site is to have a space for self-expression and to
+		share what I've learned with the world. I hope I will inspire others to
+		make their own creative corner on the web in the uphill battle against
+		the enshittification of the internet.
 	</p>
+
+
+	<hr />
+	<h1>Articles</h1>
+	<section>
+		{
+			articles.map((article) => (
+				<ArticleItem article={{ ...article.data, slug: article.slug }} />
+			))
+		}
+	</section>
+	
+	<hr />
+
+	<h1>Guides</h1>
+	<section>
+		{
+			guides.map((guide) => (
+				<GuideItem guide={{ ...guide.data, slug: guide.slug }} />
+			))
+		}
+	</section>
 </BaseLayout>
+
+
+
+<!-- 
+TODO
+Display few articles, guide, code snippets like
+https://thinkdobecreate.com/ 
+-->
