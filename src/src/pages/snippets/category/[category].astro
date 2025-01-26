@@ -1,18 +1,14 @@
 ---
-import { getPublishedSnippets } from '../../../utils/helper';
+import { getPublishedSnippets, normalizeSpaceAndCase } from '../../../utils/helper';
 import Layout from '../../../layouts/BaseLayout.astro';
 import SnippetItem from '../../../components/Snippet/SnippetItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import SnippetCategoryList from '../../../components/Snippet/SnippetCategoryList.astro';
 
 export async function getStaticPaths() {
-  // Fetch all articles from the collection
   const snippets = await getPublishedSnippets();
+  const categories = [...new Set(snippets.map(snippet => normalizeSpaceAndCase(snippet.data.category)))];
 
-  // Get a list of unique categories
-  const categories = [...new Set(snippets.map(snippet => snippet.data.category))];	//todo filter non draft and move it to heler class
-
-  // Generate paths for each category
   return categories.map(category => 
   ({
     params: { category }
@@ -20,10 +16,8 @@ export async function getStaticPaths() {
 }
 
 const { category } = Astro.params;
-// Fetch all articles from the collection
 const snippets = await getPublishedSnippets();
-// Filter articles by the current category
-const filteredSnippets = snippets.filter(snippet => snippet.data.category === category);
+const filteredSnippets = snippets.filter(snippet => normalizeSpaceAndCase(snippet.data.category)  === category);
 
 ---
 

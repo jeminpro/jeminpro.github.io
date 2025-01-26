@@ -18,12 +18,7 @@ const { article } = Astro.props;
 	<small class="categoy">{article.category}</small>
 	<p>{article.description}</p>
 	<footer>
-		<a
-			class="read-more"
-			href={`/articles/${article.slug}`}
-		>
-			READ MORE
-		</a>
+		<a class="read-more" href={`/articles/${article.slug}`}>READ MORE</a>
 	</footer>
 </article>
 

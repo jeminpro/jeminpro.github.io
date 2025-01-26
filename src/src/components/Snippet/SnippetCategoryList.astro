@@ -1,26 +1,28 @@
 ---
-import { getPublishedSnippets } from '../../utils/helper';
+import { getPublishedSnippets, normalizeSpaceAndCase } from '../../utils/helper';
+const { pathname } = Astro.url;
 
 const snippets = await getPublishedSnippets();
 const categories = [...new Set(snippets.map(snippet => snippet.data.category))].sort();
+
+const categorieItems = categories.map((category: string)  => {
+	const urlPath = `/snippets/category/${normalizeSpaceAndCase(category)}`;
+	return {
+		name: category,
+		selected: urlPath === pathname,
+		url: urlPath,
+	};
+});
+
+categorieItems.unshift({
+	name: "All",
+	selected: "/snippets" === pathname,
+	url: "/snippets",
+});
 ---
 
-<div class="snippet-category-list">
-	<a class="snippet-category-item" href="/snippets">All</a> 
-{
-	categories.map((category) => (
-		<a class="snippet-category-item" href={`/snippets/category/${category}`}>{category}</a> 
-		))
-}
+<div class="category-list">
+	{
+		categorieItems.map((categoryItem) => (<a class:list={["category-item",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
+	}
 </div>
-
-<style>
-	.snippet-category-list{
-		display: flex;
-	}
-
-	.snippet-category-item{
-		display: inline-block;
-		margin: 0 10px;
-	}
-</style>

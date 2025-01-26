@@ -1,30 +1,23 @@
 ---
-import { getPublishedArticles } from '../../../utils/helper';
+import { getPublishedArticles, normalizeSpaceAndCase } from '../../../utils/helper';
 import Layout from '../../../layouts/BaseLayout.astro';
 import ArticleItem from '../../../components/Article/ArticleItem.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from "../../../consts";
 import ArticleCategoryList from '../../../components/Article/ArticleCategoryList.astro';
 
 export async function getStaticPaths() {
-  // Fetch all articles from the collection
   const articles = await getPublishedArticles();
+  const categories = [...new Set(articles.map(article => normalizeSpaceAndCase(article.data.category)))];
 
-  // Get a list of unique categories
-  const categories = [...new Set(articles.map(article => article.data.category))];	//todo filter non draft and move it to heler class
-
-  // Generate paths for each category
   return categories.map(category => 
   ({
     params: { category }
   }));
 }
 
-// Get the category from the params
 const { category } = Astro.params;
-// Fetch all articles from the collection
 const articles = await getPublishedArticles();
-// Filter articles by the current category
-const filteredArticles = articles.filter(article => article.data.category === category);
+const filteredArticles = articles.filter(article => normalizeSpaceAndCase(article.data.category) === category);
 
 ---
 

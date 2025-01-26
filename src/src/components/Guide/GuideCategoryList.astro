@@ -1,29 +1,28 @@
 ---
-import { getPublishedGuides } from '../../utils/helper';
+import { getPublishedGuides,	normalizeSpaceAndCase } from "../../utils/helper";
+const { pathname } = Astro.url;
 
-
-// Fetch all articles from the collection
 const guides = await getPublishedGuides();
-// Get a list of unique categories
 const categories = [...new Set(guides.map(article => article.data.category))].sort();
+
+const categorieItems = categories.map((category: string)  => {
+	const urlPath = `/guides/category/${normalizeSpaceAndCase(category)}`;
+	return {
+		name: category,
+		selected: urlPath === pathname,
+		url: urlPath,
+	};
+});
+
+categorieItems.unshift({
+	name: "All",
+	selected: "/guides" === pathname,
+	url: "/guides",
+});
 ---
 
 <div class="category-list">
-	<a class="category-item" href="/guides">All</a> 
-{
-	categories.map((category) => (
-		<a class="category-item" href={`/guides/category/${category}`}>{category}</a> 
-		))
-}
+	{
+		categorieItems.map((categoryItem) => (<a class:list={["category-item",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
+	}
 </div>
-
-<style>
-	.category-list{
-		display: flex;
-	}
-
-	.category-item{
-		display: inline-block;
-		margin: 0 10px;
-	}
-</style>
