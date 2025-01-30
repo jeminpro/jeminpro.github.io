@@ -71,10 +71,16 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
 
-Check out [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
 
-## Credit
+# Astro plugins
 
-This theme is based off of the lovely [Bear Blog](https://github.com/HermanMartinus/bearblog/).
+## Astro Icon and Iconify
+[Astro Icon](https://www.astroicon.dev) is used to load the icons from local or icon sets like iconify
+[Iconify](https://iconify.design/) is a home of open source icon sets, browse icons [here](https://icon-sets.iconify.design/). Currently installed [fonwawsome](https://icones.js.org/collection/fa6-solid) 
+
+
+Refer to astro icon document [Customizing Icons](https://www.astroicon.dev/guides/customization/) especially section `Install dependency`
+
+For styling the icons refe [here](https://www.astroicon.dev/guides/styling/)
+
