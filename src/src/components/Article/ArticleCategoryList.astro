@@ -3,8 +3,11 @@ import { getPublishedArticles,	normalizeSpaceAndCase } from "../../utils/helper"
 const { pathname } = Astro.url;
 
 const articles = await getPublishedArticles();
-const categories = [...new Set(articles.map((article) => article.data.category))].sort();
-
+let categories = [...new Set(articles.map((article) => article.data.category))].sort();
+/*
+let additionalCategories = ["Hello", "Test", "World", "Fire", "More", "Hero", "Some Words", "More Words"];
+categories = [...categories, ...additionalCategories];
+*/
 const categorieItems = categories.map((category: string)  => {
 	const urlPath = `/articles/category/${normalizeSpaceAndCase(category)}`;
 	return {
@@ -21,8 +24,17 @@ categorieItems.unshift({
 });
 ---
 
-<div class="category-list">
-	{
-		categorieItems.map((categoryItem) => (<a class:list={["category-item",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
-	}
+<div class="tags-wrapper">
+	<div class="tags-list">
+		{
+			categorieItems.map((categoryItem) => (<a class:list={["tag",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
+		}
+	</div>
+	<div class="arrow-left" >
+		<i class="fa-solid fa-chevron-left"></i>
+	</div>
+
+	<div class="arrow-right">
+		<i class="fa-solid fa-chevron-right"></i>
+	</div>
 </div>
