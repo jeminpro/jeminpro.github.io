@@ -1,15 +1,11 @@
 ---
 import { getPublishedGuides,	normalizeSpaceAndCase } from "../../utils/helper";
 import { Icon } from 'astro-icon/components'
-const { pathname } = Astro.url;
+let { pathname } = Astro.url;
+pathname = pathname.replace(/\/$/, '');	// trim trailing slash
 
 const guides = await getPublishedGuides();
-//const categories: string[] = [...new Set(guides.map(article => article.data.category))].sort();
-
-// Temporary solution to add more categories
-let categories: string[] = [...new Set(guides.map(article => article.data.category))].sort();
-let additionalCategories = ["Hello", "Test", "World", "Fire", "More", "Hero", "Some Words", "More Words"];
-categories = [...categories, ...additionalCategories];
+const categories: string[] = [...new Set(guides.map(article => article.data.category))].sort();
 
 const categorieItems = categories.map((category: string)  => {
 	const urlPath = `/guides/category/${normalizeSpaceAndCase(category)}`;

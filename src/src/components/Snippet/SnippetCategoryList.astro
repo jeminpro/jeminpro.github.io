@@ -1,7 +1,8 @@
 ---
 import { getPublishedSnippets, normalizeSpaceAndCase } from '../../utils/helper';
 import { Icon } from 'astro-icon/components'
-const { pathname } = Astro.url;
+let { pathname } = Astro.url;
+pathname = pathname.replace(/\/$/, '');	// trim trailing slash
 
 const snippets = await getPublishedSnippets();
 const categories = [...new Set(snippets.map(snippet => snippet.data.category))].sort();
