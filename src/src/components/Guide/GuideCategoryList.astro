@@ -1,9 +1,15 @@
 ---
 import { getPublishedGuides,	normalizeSpaceAndCase } from "../../utils/helper";
+import { Icon } from 'astro-icon/components'
 const { pathname } = Astro.url;
 
 const guides = await getPublishedGuides();
-const categories = [...new Set(guides.map(article => article.data.category))].sort();
+//const categories: string[] = [...new Set(guides.map(article => article.data.category))].sort();
+
+// Temporary solution to add more categories
+let categories: string[] = [...new Set(guides.map(article => article.data.category))].sort();
+let additionalCategories = ["Hello", "Test", "World", "Fire", "More", "Hero", "Some Words", "More Words"];
+categories = [...categories, ...additionalCategories];
 
 const categorieItems = categories.map((category: string)  => {
 	const urlPath = `/guides/category/${normalizeSpaceAndCase(category)}`;
@@ -21,8 +27,17 @@ categorieItems.unshift({
 });
 ---
 
-<div class="category-list">
-	{
-		categorieItems.map((categoryItem) => (<a class:list={["category-item",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
-	}
+<div class="tags-wrapper">
+	<div class="tags-list">
+		{
+			categorieItems.map((categoryItem) => (<a class:list={["tag",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
+		}
+	</div>
+	<div class="arrow-left" >
+		<Icon name="fa6-solid:chevron-left" />
+	</div>
+
+	<div class="arrow-right">
+		<Icon name="fa6-solid:chevron-right" />
+	</div>
 </div>

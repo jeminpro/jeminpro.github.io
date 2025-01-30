@@ -191,38 +191,10 @@ hr {
 	margin-bottom: 1.5rem;
 }
 
-
-.category-list {
-	margin: 10px 0 30px;
-}
-
-.category-item {
-	margin-right: 3px;
-	text-decoration: none;
-	border: #d35244 2px solid;
-	padding: 1px 10px;
-	color: #d35244;
-	border-radius: 15px;
-	font-size: medium;
-}
-
-	.category-item:hover {
-		background-color: #d35244;
-		color: white;
-	}
-
-	.category-item.selected {
-		background-color: rgb(179, 83, 72);
-		border: rgb(179, 83, 72) 2px solid;
-		color: white;
-		pointer-events: none;
-	}
-
-
-
 	/****** TAGS ******/
 .tags-wrapper {
 	position: relative;
+	margin: 1rem 0;
 }
 
 .tags-list {

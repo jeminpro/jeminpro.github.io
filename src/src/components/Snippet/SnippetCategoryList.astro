@@ -1,5 +1,6 @@
 ---
 import { getPublishedSnippets, normalizeSpaceAndCase } from '../../utils/helper';
+import { Icon } from 'astro-icon/components'
 const { pathname } = Astro.url;
 
 const snippets = await getPublishedSnippets();
@@ -21,8 +22,17 @@ categorieItems.unshift({
 });
 ---
 
-<div class="category-list">
-	{
-		categorieItems.map((categoryItem) => (<a class:list={["category-item",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
-	}
+<div class="tags-wrapper">
+	<div class="tags-list">
+		{
+			categorieItems.map((categoryItem) => (<a class:list={["tag",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
+		}
+	</div>
+	<div class="arrow-left" >
+		<Icon name="fa6-solid:chevron-left" />
+	</div>
+
+	<div class="arrow-right">
+		<Icon name="fa6-solid:chevron-right" />
+	</div>
 </div>
