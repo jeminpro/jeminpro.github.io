@@ -1,30 +1,36 @@
 import { defineCollection, z } from 'astro:content';
+import fs from "fs";
+import path from "path";
+import yaml from "yaml";
+
+const filePath = path.resolve("./src/data/tags.yaml");
+const fileContents = fs.readFileSync(filePath, "utf8");
+const tagsData = yaml.parse(fileContents);
 
 const articleSchema = z.object({
 	title: z.string(),
 	description: z.string(),
-	category: z.enum(['Architect', 'Back End', 'Dev Ops', 'DIY', 'Front End', 'General']),		
+	category: z.enum(tagsData.articles),		
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
 	draft: z.boolean().optional()
 
-	// tags: z.array(z.enum(['Front End','Back End','DIY'])),
 	// tags: z.array(z.string()),
-});
-
-const snippetSchema = z.object({
-	title: z.string(),
-	category: z.enum(['C Sharp', 'CSS', 'JavaScript', 'SQL']),
-	description: z.string().optional(),
-	publishedDate: z.coerce.date(),
-	updatedDate: z.coerce.date().optional(),
-	draft: z.boolean().optional()
 });
 
 const guideSchema = z.object({
 	title: z.string(),
 	description: z.string(),
-	category: z.enum(['C Sharp', 'CSS', 'JavaScript', 'SQL']),		
+	category: z.enum(tagsData.guides),		
+	publishedDate: z.coerce.date(),
+	updatedDate: z.coerce.date().optional(),
+	draft: z.boolean().optional()
+});
+
+const snippetSchema = z.object({
+	title: z.string(),
+	category: z.enum(tagsData.snippets),
+	description: z.string().optional(),
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
 	draft: z.boolean().optional()

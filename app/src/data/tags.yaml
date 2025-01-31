@@ -1,0 +1,21 @@
+# Changes to this file requires rebuliding the app in order for it to take effect.
+
+articles:
+  - Architect
+  - Back End
+  - Dev Ops
+  - DIY
+  - Front End
+  - General
+
+guides:
+  - C Sharp
+  - CSS
+  - JavaScript
+  - SQL
+
+snippets:
+  - C Sharp
+  - CSS
+  - JavaScript
+  - SQL
