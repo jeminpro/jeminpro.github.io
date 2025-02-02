@@ -15,7 +15,7 @@ const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<div class="landing-page">
-		<h1 class="title-introduction">Hi there! I'm Jemin.</h1>
+		<h1>Hi there! I'm Jemin.</h1>
 		<p>
 			I am a full stack .NET developer. I've been building applications with .NET for over a decade,
 			but lately, I've been diving deep into the AI rabbit hole. I created
@@ -33,45 +33,63 @@ const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.
 		</p>
 
 
-		<hr />
-		<h1>Articles</h1>
+		<h1>Latest articles</h1>
 		<section>
 			{
 				articles.map((article) => (
 					<ArticleItem article={{ ...article.data, slug: article.slug }} />
 				))
 			}
+
+			<div class="load-more"><a class="load-more__link" data-instant="" href="/articles">See All Articles</a></div>
 		</section>
 		
-		<hr />
-
-		<h1>Guides</h1>
+		<h1>Latest guides</h1>
 		<section>
 			{
 				guides.map((guide) => (
 					<GuideItem guide={{ ...guide.data, slug: guide.slug }} />
 				))
 			}
+
+			<div class="load-more"><a class="load-more__link" data-instant="" href="/guides">See All Guides</a></div>
 		</section>
 	</div>
 </BaseLayout>
 
 
 
-<!-- 
-TODO
-Display few articles, guide, code snippets like
-https://thinkdobecreate.com/ 
-https://www.joshwcomeau.com/about-josh/
--->
-
 <style>
-	.landing-page {
-		margin: 3rem auto;
+	h1 {
+		margin: 3rem 0 2rem;
 	}
 
 	.title-introduction {
 		margin-bottom: 2rem;
 	}
 
+	.load-more {
+		text-align: center;
+		padding: 1em 0;
+	}
+
+	a.load-more__link {
+		letter-spacing: 1px;
+		background-position: center 72%;
+		text-transform: uppercase;
+		font-size: .75em;
+		color: inherit;
+		background: 0 0;
+		text-shadow: none;
+		border-bottom: 5px solid #d33a2c;
+		letter-spacing: 1px;
+		transition: all .1s ease-out;
+		display: inline-block;
+		cursor: pointer;
+		text-decoration: none;
+	}
+
+	a.load-more__link:focus, a.load-more__link:hover {
+		color: #d33a2c;
+	}
 </style>
