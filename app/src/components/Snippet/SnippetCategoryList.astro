@@ -29,11 +29,11 @@ categorieItems.unshift({
 			categorieItems.map((categoryItem) => (<a class:list={["tag",{ selected: categoryItem.selected }, ]} href={categoryItem.url}>{categoryItem.name}</a>))
 		}
 	</div>
-	<div class="arrow-left" >
+	<div class="arrow-left display-none" >
 		<Icon name="fa6-solid:chevron-left" />
 	</div>
 
-	<div class="arrow-right">
+	<div class="arrow-right display-none">
 		<Icon name="fa6-solid:chevron-right" />
 	</div>
 </div>

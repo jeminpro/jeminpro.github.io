@@ -9,46 +9,9 @@ interface Props {
 const { snippet: snippet } = Astro.props;
 ---
 
-<a class="snip" href={`/snippets/${snippet.slug}`}>
-	<small class="category">{snippet.category}</small>
+<a class="card" href={`/snippets/${snippet.slug}`}>
 	<h4 class="title">{snippet.title}</h4>
 	<p>{snippet.description}</p>
+	<small class="category">{snippet.category}</small>
 </a>
 
-
-<style>
-	.snip {
-		display: block;
-		border: 1px solid #dad9d9;
-		border-radius: 5px;
-		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
-		margin-bottom: 30px;
-		padding: 0.5rem 3rem;
-		position: relative;
-	}
-
-	.snip .category {
-		position: absolute;
-		top: 0;
-		right: 0;
-		margin-right: 5px;
-	}
-
-	.snip:hover {
-		box-shadow: rgba(0, 0, 0, 0.3) 0 4px 2px -2px;
-	}
-
-	.title {
-		padding-top: 10px;
-		color: #d35244;
-	}
-
-	a {
-		text-decoration: none;
-		color: inherit;
-	}
-
-	.category-select button{
-		margin-right: 5px;
-	}
-</style>

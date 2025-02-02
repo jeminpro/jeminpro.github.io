@@ -14,47 +14,46 @@ const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<h1>Hello!</h1>
-	<p>
-		My name is Jemin, and I am a full stack .NET developer and AI
-		enthusiast. I've been building applications with .NET for over a decade,
-		but lately, I've been diving deep into the AI rabbit hole. I created
-		this blog so I can share the things I learn in the hope of both helping
-		others and deepening my knowledge of the topics I write about.
-	</p>
-	<p>
-		Welcome to my spot on the web for writing, guides, code snippet, and
-		anything else I want to put out there.
-	</p>
-	<p>
-		My site has no ads, no tracking, no sponsored posts, and no paywall. My
-		motivation for the site is to have a space for self-expression and to
-		share what I've learned with the world. I hope I will inspire others to
-		make their own creative corner on the web in the uphill battle against
-		the enshittification of the internet.
-	</p>
+	<div class="landing-page">
+		<h1 class="title-introduction">Hi there! I'm Jemin.</h1>
+		<p>
+			I am a full stack .NET developer. I've been building applications with .NET for over a decade,
+			but lately, I've been diving deep into the AI rabbit hole. I created
+			this blog so I can share the things I learn in the hope of both helping
+			others and deepening my knowledge of the topics I write about.
+		</p>
+		<p>
+			Welcome to my spot on the web for writing, guides, code snippet, and
+			anything else I want to put out there.
+		</p>
+		<p>
+			My site has no ads, no sponsored posts, and no paywall. My
+			motivation for the site is to have a space for self-expression and to
+			share what I've learned with the world.
+		</p>
 
 
-	<hr />
-	<h1>Articles</h1>
-	<section>
-		{
-			articles.map((article) => (
-				<ArticleItem article={{ ...article.data, slug: article.slug }} />
-			))
-		}
-	</section>
-	
-	<hr />
+		<hr />
+		<h1>Articles</h1>
+		<section>
+			{
+				articles.map((article) => (
+					<ArticleItem article={{ ...article.data, slug: article.slug }} />
+				))
+			}
+		</section>
+		
+		<hr />
 
-	<h1>Guides</h1>
-	<section>
-		{
-			guides.map((guide) => (
-				<GuideItem guide={{ ...guide.data, slug: guide.slug }} />
-			))
-		}
-	</section>
+		<h1>Guides</h1>
+		<section>
+			{
+				guides.map((guide) => (
+					<GuideItem guide={{ ...guide.data, slug: guide.slug }} />
+				))
+			}
+		</section>
+	</div>
 </BaseLayout>
 
 
@@ -63,4 +62,16 @@ const guides = (await getPublishedGuides()).sort((a, b) => b.data.publishedDate.
 TODO
 Display few articles, guide, code snippets like
 https://thinkdobecreate.com/ 
+https://www.joshwcomeau.com/about-josh/
 -->
+
+<style>
+	.landing-page {
+		margin: 3rem auto;
+	}
+
+	.title-introduction {
+		margin-bottom: 2rem;
+	}
+
+</style>

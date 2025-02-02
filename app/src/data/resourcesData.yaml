@@ -176,10 +176,14 @@ resources:
     url: https://css-tricks.com/
     description: |
      A must-read article for front end developers and designers to catch up with new development and best practices.
-  - name: Alligator
-    url: https://alligator.io/
+  - name: Joshwcomeau
+    url: https://www.joshwcomeau.com/
     description: |
-     Frontend web development
+     Josh blog on frontend web development
+  - name: Think do be create
+    url: https://thinkdobecreate.com/
+    description: |
+     Stephanie Eckles blog on frontend web development
   - name: Code maze
     url: https://code-maze.com/latest-posts-on-code-maze/
     description: |
