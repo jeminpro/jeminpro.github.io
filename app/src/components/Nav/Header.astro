@@ -69,12 +69,21 @@ const menuItems = [
 		box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.4);
 	}
 
-	.card-header .card-header-title {
-		text-align: center;
-		font-size: 1.5rem;
-		margin: 1rem 0;
-		font-weight: 600;
-		font-family: "Dosis", sans-serif;
+	a {
+		text-decoration: none;
+		color: #fff;
+		padding: 0.25em .75em;
+	}
+
+	a.override-color{
+		color: black;
+		text-decoration: underline;
+	}
+
+	.selected-menu-item {
+		background: rgba(0, 0, 0, 0.1);
+		border-radius: 5px;
+		display: inline-block;
 	}
 
 	.site-logo {

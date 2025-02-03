@@ -13,7 +13,7 @@ export default function site() {
 
   const hookEvents = () => {
     handleMobileBurgerButton();
-    tagsEvents();
+    tagsArrowScroll();
   }
 
   const handleMobileBurgerButton = () => {
@@ -23,7 +23,9 @@ export default function site() {
     });
   }
 
-  const tagsEvents = () => {
+  const tagsArrowScroll = () => {
+    if($taglist === null) return;
+
     $tagLeftArrow.addEventListener("click", () => {
       $taglist.scrollBy({ left: -200, behavior: "smooth" });
     });
@@ -32,25 +34,25 @@ export default function site() {
       $taglist.scrollBy({ left: 200, behavior: "smooth" });
     });
     
-    $taglist.addEventListener("scroll", updateTagArrows);
-    window.addEventListener("load", updateTagArrows);
-  }
+    const arrowVisability = () => {
+      const maxScrollLeft = $taglist.scrollWidth - $taglist.clientWidth - 5;
   
-  const updateTagArrows = () => {
-    const maxScrollLeft = $taglist.scrollWidth - $taglist.clientWidth - 5;
+      if ($taglist.scrollLeft > 0) {
+        $tagLeftArrow.classList.remove("display-none");
+      } else {
+        $tagLeftArrow.classList.add("display-none");
+      }
+  
+      if ($taglist.scrollLeft < maxScrollLeft) {
+        $tagRightArrow.classList.remove("display-none");
+      } else {
+        $tagRightArrow.classList.add("display-none");
+      }
+    };
 
-    if ($taglist.scrollLeft > 0) {
-      $tagLeftArrow.classList.remove("display-none");
-    } else {
-      $tagLeftArrow.classList.add("display-none");
-    }
-
-    if ($taglist.scrollLeft < maxScrollLeft) {
-      $tagRightArrow.classList.remove("display-none");
-    } else {
-      $tagRightArrow.classList.add("display-none");
-    }
-  };
+    $taglist.addEventListener("scroll", arrowVisability);
+    window.addEventListener("load", arrowVisability);
+  }
 
   const footerTyping = () => {
     const wordSpanElement = document.querySelector(".typing-container span");
