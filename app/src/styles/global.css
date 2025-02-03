@@ -307,6 +307,10 @@ hr {
 		position: relative;
 	}
 
+	a.card:hover {
+		background: #fbfbfb;
+	}
+
 	.card .title, .card .title a{
 		padding-top: 10px;
 		color: #d35244;
@@ -352,4 +356,9 @@ hr {
 		color: #fff;
 		border-radius: 0 0 5px 0;
 		font-size: 0.9rem;
+	}
+
+	.category-heading{
+		margin-top: 2rem;
+		color: #444;
 	}

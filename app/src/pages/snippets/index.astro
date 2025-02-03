@@ -5,18 +5,27 @@ import SnippetItem from '../../components/Snippet/SnippetItem.astro';
 import SnippetCategoryList from '../../components/Snippet/SnippetCategoryList.astro';
 
 const snippets = (await getPublishedSnippets()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf());
+const categories = [...new Set(snippets.map(snippet => snippet.data.category))].sort();
+
 ---
 
 <Layout title="Snippets" description="Code snippets">
 
 	<SnippetCategoryList />
 
-	<section>
-		{
-			snippets.map((snippet) => (
-				<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />
-			))
-		}
-	</section>
+	{
+		categories.map((category) => (
+			<>
+				<h6 class="category-heading">{category}</h6>
+				<section>
+					{
+						snippets.filter(snippet => snippet.data.category === category).map((snippet) => (
+							<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />
+						))
+					}
+				</section>
+			</>
+		))
+	}
 </Layout>
 
