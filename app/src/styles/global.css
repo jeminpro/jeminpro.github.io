@@ -296,7 +296,7 @@ hr {
 		border: 1px solid #dad9d9;
 		border-radius: 5px;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
-		margin-bottom: 30px;
+		margin-bottom: 1rem;
 		padding: 0.5rem 3rem;
 		position: relative;
 	}
@@ -358,7 +358,48 @@ hr {
 		font-size: 0.9rem;
 	}
 
-	.category-heading{
+	.category-heading {
 		margin-top: 2rem;
-		color: #444;
+		color: #777;
+	}
+
+
+	/*** content styling ****/
+
+	.content {
+		width: 720px;
+		max-width: calc(100% - 2em);
+		margin: auto;
+		padding: 1em;
+		color: rgb(var(--gray-dark));
+	}
+	
+	.content .title {
+		position: relative;
+		margin-bottom: 1em;
+		padding: 1em 0;
+		line-height: 1;
+	}
+
+	.content .title h1 {
+		color: #d35244;
+	}
+	.content .date {
+		margin-bottom: 0.5em;
+		color: rgb(var(--gray));
+		font-size: 0.9rem;
+
+	}
+	.content  .last-updated-on {
+		font-style: italic;
+	}
+
+	.content .category {
+		position: absolute;
+		bottom: 2.4rem;
+		right: 0.5rem;
+		padding: 3px 7px;
+		background: #e7786d;
+		color: #fff;
+		font-size: 0.9rem;
 	}

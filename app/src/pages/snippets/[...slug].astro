@@ -1,7 +1,7 @@
 ---
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
-import FormattedDate from '../../components/FormattedDate.astro';
+import ContentTitle from '../../components/Content/ContentTitle.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
@@ -18,69 +18,13 @@ const { Content } = await snippet.render();
 ---
 
 <Layout title={title} description={description}>
-	<article>
-		<div class="prose">
-			
-			<BreadCrumbs></BreadCrumbs>
-			
-			<div class="title">
-				<div class="date">
-					<FormattedDate date={publishedDate} />
-					{
-						updatedDate && (
-							<div class="last-updated-on">
-								Last updated on <FormattedDate date={updatedDate} />
-							</div>
-						)
-					}
-				</div>
-				<h1>{title}</h1>
-				<hr />				
-			</div>
-			<span>{category}</span>
-			<p>{description}</p>
+	<article class="content">
+		<BreadCrumbs></BreadCrumbs>
+				
+		<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
 
-			<Content />
-		</div>
+		<p>{description}</p>
+
+		<Content />
 	</article>
 </Layout>
-
-<style>
-	main {
-		width: calc(100% - 2em);
-		max-width: 100%;
-		margin: 0;
-	}
-	.hero-image {
-		width: 100%;
-	}
-	.hero-image img {
-		display: block;
-		margin: 0 auto;
-		border-radius: 12px;
-		box-shadow: var(--box-shadow);
-	}
-	.prose {
-		width: 720px;
-		max-width: calc(100% - 2em);
-		margin: auto;
-		padding: 1em;
-		color: rgb(var(--gray-dark));
-	}
-	.title {
-		margin-bottom: 1em;
-		padding: 1em 0;
-		text-align: center;
-		line-height: 1;
-	}
-	.title h1 {
-		margin: 0 0 0.5em 0;
-	}
-	.date {
-		margin-bottom: 0.5em;
-		color: rgb(var(--gray));
-	}
-	.last-updated-on {
-		font-style: italic;
-	}
-</style>

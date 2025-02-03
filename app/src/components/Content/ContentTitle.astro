@@ -1,0 +1,32 @@
+---
+import FormattedDate from './FormattedDate.astro';
+
+// Define props with the Article type
+interface Props {
+	title: string;
+	publishedDate: Date;
+	updatedDate?: Date;
+	category: string;
+}
+
+const { title, publishedDate, updatedDate, category } = Astro.props;
+---
+
+<div class="title">
+	<h1>{title}</h1>
+
+	<div class="date">
+		<FormattedDate date={publishedDate} />
+		{
+			updatedDate && (
+				<div class="last-updated-on">
+					Last updated on <FormattedDate date={updatedDate} />
+				</div>
+			)
+		}
+	</div>
+
+	<div class="category">{category}</div>
+
+	<hr />
+</div>
