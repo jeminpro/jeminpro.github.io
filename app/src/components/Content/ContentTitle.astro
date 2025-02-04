@@ -1,6 +1,6 @@
 ---
 import FormattedDate from './FormattedDate.astro';
-
+import { Icon } from 'astro-icon/components'
 // Define props with the Article type
 interface Props {
 	title: string;
@@ -14,19 +14,14 @@ const { title, publishedDate, updatedDate, category } = Astro.props;
 
 <div class="title">
 	<h1>{title}</h1>
+	<div class="content-info">
+		<span class="info-item"><Icon name="fa6-solid:calendar-day" /><FormattedDate date={publishedDate} /></span>
 
-	<div class="date">
-		<FormattedDate date={publishedDate} />
-		{
-			updatedDate && (
-				<div class="last-updated-on">
-					Last updated on <FormattedDate date={updatedDate} />
-				</div>
-			)
-		}
+		{updatedDate && (<span class="info-item"><Icon name="fa6-solid:calendar-plus" /><FormattedDate date={updatedDate} /></span>)}
+		
+		<span class="info-item"><Icon name="fa6-solid:tag" /> {category} </span>
 	</div>
-
-	<div class="category">{category}</div>
+	
 
 	<hr />
 </div>

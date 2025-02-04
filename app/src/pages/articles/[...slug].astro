@@ -3,8 +3,6 @@ import { getPublishedArticles } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
 
-import BreadCrumbs from '../../components/BreadCrumbs.astro';
-
 export async function getStaticPaths() {
 	const posts = await getPublishedArticles();
 	return posts.map((post) => ({
@@ -22,7 +20,7 @@ const { Content } = await article.render();
 
 <Layout title={title} description={description}>	
 	<article class="content">
-		<BreadCrumbs></BreadCrumbs>
+		<!-- <BreadCrumbs></BreadCrumbs> -->
 		<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
 		<Content />
 	</article>

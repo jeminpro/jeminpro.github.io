@@ -313,7 +313,7 @@ hr {
 
 	.card .title, .card .title a{
 		padding-top: 10px;
-		color: #d35244;
+		color: #333;
 		text-decoration: none;
 	}	
 
@@ -352,8 +352,7 @@ hr {
 		bottom: 0;
 		right: 0;
 		padding: 3px 7px;
-		background: #e7786d;
-		color: #fff;
+		color: #777;
 		border-radius: 0 0 5px 0;
 		font-size: 0.9rem;
 	}
@@ -370,36 +369,31 @@ hr {
 		width: 720px;
 		max-width: calc(100% - 2em);
 		margin: auto;
-		padding: 1em;
+		padding: 0.5rem 0;
 		color: rgb(var(--gray-dark));
 	}
 	
 	.content .title {
-		position: relative;
-		margin-bottom: 1em;
-		padding: 1em 0;
+		padding-top: 1rem;
 		line-height: 1;
 	}
 
 	.content .title h1 {
-		color: #d35244;
+		color: #333;
+		font-size: 3rem;
+		text-align: center;
 	}
-	.content .date {
-		margin-bottom: 0.5em;
-		color: rgb(var(--gray));
-		font-size: 0.9rem;
-
-	}
-	.content  .last-updated-on {
-		font-style: italic;
-	}
-
-	.content .category {
-		position: absolute;
-		bottom: 2.4rem;
-		right: 0.5rem;
-		padding: 3px 7px;
-		background: #e7786d;
-		color: #fff;
+	.content .content-info {
+		color: #777;
 		font-size: 0.9rem;
 	}
+
+	.content .info-item{
+		margin-right: 1rem;
+	}
+
+	.expressive-code {
+		margin: 1rem 0;
+	}
+
+	

@@ -1,7 +1,6 @@
 ---
 import { getPublishedGuides } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
-import BreadCrumbs from '../../components/BreadCrumbs.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
 
 export async function getStaticPaths() {
@@ -20,7 +19,6 @@ const { Content } = await guide.render();
 
 <Layout title={title} description={description}>
 	<article class="content">
-		<BreadCrumbs></BreadCrumbs>
 		<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
 		<Content />
 	</article>

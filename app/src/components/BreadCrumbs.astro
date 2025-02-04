@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components'
+
 interface Props {
 	hideLastLink?: boolean;
 }
@@ -27,8 +29,8 @@ showBreadCrumbs &&
 <div class="bread-crumbs"> 
     <a href="/">Home</a>
     {hideLastLink ?
-    breadcrumbs.map((item, index, {length}) => <span> <span class="chevron-icon" set:html={chevron}></Fragment> {index + 1 < length ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}</span>) : 
-    breadcrumbs.map(item => <span> <span class="chevron-icon" set:html={chevron}></Fragment> <a href={item.href}>{item.label}</a></span>)}
+    breadcrumbs.map((item, index, {length}) => <span> <Icon name="fa6-solid:chevron-right" /> {index + 1 < length ? <a href={item.href}>{item.label}</a> : <span>{item.label}</span>}</span>) : 
+    breadcrumbs.map(item => <span> <Icon name="fa6-solid:chevron-right" />  <a href={item.href}>{item.label}</a></span>)}
 </div>
 }
 
@@ -39,14 +41,16 @@ showBreadCrumbs &&
 
     a {
         text-decoration: none;
-        color: inherit;
+        color: #777;
     }
 
     a:hover {
-        color: #000;
+        color: #333;
     }
 
-    .chevron-icon{
+    .bread-crumbs [data-icon="fa6-solid:chevron-right"]{
+        height: 10px;
+        color: #777;
         margin: 0 .25rem;
     }
 </style>

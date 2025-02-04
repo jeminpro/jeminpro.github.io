@@ -2,7 +2,6 @@
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
-import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
 	const snippets = await getPublishedSnippets();
@@ -19,8 +18,7 @@ const { Content } = await snippet.render();
 
 <Layout title={title} description={description}>
 	<article class="content">
-		<BreadCrumbs></BreadCrumbs>
-				
+
 		<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
 
 		<p>{description}</p>
