@@ -10,7 +10,7 @@ const { snippet: snippet } = Astro.props;
 ---
 
 <a class="card" href={`/snippets/${snippet.slug}`}>
-	<h4 class="title">{snippet.title}</h4>
+	<h3 class="title">{snippet.title}</h3>
 	<p>{snippet.description}</p>
 	<small class="category">{snippet.category}</small>
 </a>

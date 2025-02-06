@@ -27,7 +27,7 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--gray-dark);
-	font-size: 20px;
+	font-size: 1.125rem;
 	line-height: 1.7;
 	min-height: 100vh;
 	display: flex;
@@ -51,28 +51,32 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0 0 0.5rem 0;
-	line-height: 1.2;
+	margin: 2rem 0 .75rem;
+	line-height: 1;
 }
 
 h1 {
-	font-size: 2.2em;
+font-size: 2em; /* 2 * parent font size */
 }
 
 h2 {
-	font-size: 2em;
+font-size: 1.5em; /* 1.5 * parent font size */
 }
 
 h3 {
-	font-size: 1.7em;
+font-size: 1.125em; /* 1.125 * parent font size */
 }
 
 h4 {
-	font-size: 1.5em;
+font-size: 0.875em; /* 0.875 * parent font size */
 }
 
 h5 {
-	font-size: 1.2em;
+font-size: 0.75em; /* 0.75 * parent font size */
+}
+
+h6 {
+font-size: 0.625em; /* 0.625 * parent font size */
 }
 
 strong,
@@ -89,7 +93,7 @@ a:hover {
 }
 
 p {
-	margin-bottom: 1rem;
+	margin: 0 0 1rem;
 }
 
 textarea {
@@ -282,7 +286,7 @@ hr {
 		border-radius: 5px;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
 		margin-bottom: 1rem;
-		padding: 0.5rem 3rem;
+		padding: 0 1.5rem;
 		position: relative;
 	}
 
@@ -297,14 +301,14 @@ hr {
 	}
 
 	.card .title, .card .title a{
-		padding-top: 10px;
 		color: #333;
 		text-decoration: none;
+		margin: 1rem 0;
 	}	
 
 	.card footer {
 		border-top: 1px solid #e6e6e6;
-		padding: 0.3rem 0;
+		padding: 0.5rem 0;
 	}
 
 	.card .read-more {
@@ -334,12 +338,13 @@ hr {
 
 	.card .category {
 		position: absolute;
-		bottom: 0;
-		right: 0;
+		bottom: .15rem;
+		right: 1.5rem;
 		padding: 3px 7px;
 		color: #777;
 		border-radius: 0 0 5px 0;
 		font-size: 0.9rem;
+		user-select: none;
 	}
 
 	.category-heading {

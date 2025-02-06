@@ -10,11 +10,7 @@ const { article } = Astro.props;
 ---
 
 <article class="card">
-	<h4 class="title">
-		<a href={`/articles/${article.slug}`}>
-			{article.title}
-		</a>
-	</h4>
+	<h3 class="title"><a href={`/articles/${article.slug}`}>{article.title}</a></h3>
 	
 	<p>{article.description}</p>
 	<footer>
