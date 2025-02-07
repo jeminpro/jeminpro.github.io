@@ -2,51 +2,61 @@
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-import { getPublishedArticles } from '../utils/helper';
-import ArticleItem from '../components/Article/ArticleItem.astro';
+import { getPublishedArticles } from "../utils/helper";
+import ArticleItem from "../components/Article/ArticleItem.astro";
 
-const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf()).slice(0, 5);
-
+const articles = (await getPublishedArticles())
+	.sort(
+		(a, b) =>
+			b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+	)
+	.slice(0, 5);
 ---
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<div class="landing-page">
-		<h1>Hi there! I'm Jemin.</h1>
-		<p>
-			I am a full stack .NET developer. I've been building applications with .NET for over a decade,
-			but lately, I've been diving deep into the AI rabbit hole. I created
-			this blog so I can share the things I learn in the hope of both helping
-			others and deepening my knowledge of the topics I write about.
-		</p>
-		<p>
-			Welcome to my spot on the web for writing articles, code snippet, and
-			anything else I want to put out there.
-		</p>
-		<p>
-			My site has no ads, no sponsored posts, and no paywall. My
-			motivation for the site is to have a space for self-expression and to
-			share what I've learned with the world.
-		</p>
+		<section class="intro">
+			<h1>Hello, my name is Jemin</h1>
+			<p>
+				I am a full stack developer and I have been building
+				applications with .NET for over a decade, but lately, I've been
+				diving deep into the AI rabbit hole. I created this blog so I
+				can share the things I learn in the hope of both helping others
+				and deepening my knowledge of the topics I write about.
+				Welcome to my spot on the web for articles, code
+				snippet, and anything else I want to put out here.
+			</p>
+		</section>
 
-
-		<h1>Latest articles</h1>
 		<section>
+			<h1>Latest articles</h1>
 			{
 				articles.map((article) => (
-					<ArticleItem article={{ ...article.data, slug: article.slug }} />
+					<ArticleItem
+						article={{ ...article.data, slug: article.slug }}
+					/>
 				))
 			}
 
-			<div class="load-more"><a class="load-more__link" data-instant="" href="/articles">See All Articles</a></div>
+			<div class="load-more">
+				<a class="load-more__link" data-instant="" href="/articles"
+					>See All Articles</a>
+			</div>
 		</section>
 	</div>
 </BaseLayout>
 
-
-
 <style>
-	h1 {
-		margin: 3rem 0 2rem;
+	.intro {
+		background: #ece7e7;
+		padding: 2rem;
+		margin-top: 1rem;
+		border-radius: 10px;
+
+	}
+
+	.intro h1 {
+		margin: 0 0 1rem;
 	}
 
 	.title-introduction {
@@ -62,19 +72,20 @@ const articles = (await getPublishedArticles()).sort((a, b) => b.data.publishedD
 		letter-spacing: 1px;
 		background-position: center 72%;
 		text-transform: uppercase;
-		font-size: .75em;
+		font-size: 0.75em;
 		color: inherit;
 		background: 0 0;
 		text-shadow: none;
 		border-bottom: 5px solid #d33a2c;
 		letter-spacing: 1px;
-		transition: all .1s ease-out;
+		transition: all 0.1s ease-out;
 		display: inline-block;
 		cursor: pointer;
 		text-decoration: none;
 	}
 
-	a.load-more__link:focus, a.load-more__link:hover {
+	a.load-more__link:focus,
+	a.load-more__link:hover {
 		color: #d33a2c;
 	}
 </style>

@@ -8,14 +8,12 @@ articles:
   - Front End
   - General
 
-guides:
-  - C Sharp
-  - CSS
-  - JavaScript
-  - SQL
 
 snippets:
   - C Sharp
   - CSS
   - JavaScript
   - SQL
+
+guides:
+  - JavaScript
