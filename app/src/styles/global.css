@@ -285,7 +285,7 @@ hr {
 		border: 1px solid #dad9d9;
 		border-radius: 5px;
 		box-shadow: rgba(0, 0, 0, 0.2) 0 4px 2px -2px;
-		margin-bottom: 1rem;
+		margin: 1.5rem 0;
 		padding: 0 1.5rem;
 		position: relative;
 	}
@@ -368,6 +368,7 @@ hr {
 	
 	.content .title {
 		line-height: 1;
+		margin-bottom: 1rem;
 	}
 
 	.content .title h1 {
@@ -389,4 +390,15 @@ hr {
 
 	a img:hover, a svg:hover {
 		transform: scale(1.1);
+	}
+
+	.content a img:hover, a svg:hover {
+		transform: none;
+	}
+
+	section.output{
+		padding: 0.5rem;
+		background: #f1f1f1;
+		border-radius: 10px;
+
 	}

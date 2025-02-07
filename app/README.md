@@ -84,3 +84,9 @@ Refer to astro icon document [Customizing Icons](https://www.astroicon.dev/guide
 
 For styling the icons refe [here](https://www.astroicon.dev/guides/styling/)
 
+
+
+# Azure static web app configuration
+
+File `staticwebapp.config.json` is added in `public` folder so when the application is build the file is copied to the root folder.
+For details on static web app configuration refer [here](https://learn.microsoft.com/en-us/azure/static-web-apps/configuration-overview)
