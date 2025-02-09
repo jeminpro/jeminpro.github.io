@@ -12,14 +12,14 @@ interface Props {
 const { title, publishedDate, updatedDate, category } = Astro.props;
 ---
 
-<div class="title">
+<div class="content-title">
 	<h1>{title}</h1>
 	<div class="content-info">
-		<span class="info-item"><Icon name="fa6-solid:calendar-day" /><FormattedDate date={publishedDate} /></span>
+		<span class="info-item" title="Created on"><Icon name="fa6-solid:calendar-day" /><FormattedDate date={publishedDate} /></span>
 
-		{updatedDate && (<span class="info-item"><Icon name="fa6-solid:calendar-plus" /><FormattedDate date={updatedDate} /></span>)}
+		{updatedDate && (<span class="info-item" title="Updated on"><Icon name="fa6-solid:calendar-plus" /><FormattedDate date={updatedDate} /></span>)}
 		
-		<span class="info-item"><Icon name="fa6-solid:tag" /> {category} </span>
+		<span class="info-item" title="Category"><Icon name="fa6-solid:tag" /> {category} </span>
 	</div>
 	
 
