@@ -164,6 +164,11 @@ resources:
     url: https://cheatography.com/
     description: |
      Huge collection of cheat sheets, another alternative is [devhints](https://devhints.io/)
+  - name: JS Cheat Sheet
+    url: https://htmlcheatsheet.com/js/
+    description: |
+     A comprehensive JavaScript cheat sheet
+
   
 - category: Favorite blogs
   description: There is a huge list of blogs and here are some of my favorites.
