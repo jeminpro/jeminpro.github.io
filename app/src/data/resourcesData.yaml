@@ -168,6 +168,10 @@ resources:
     url: https://htmlcheatsheet.com/js/
     description: |
      A comprehensive JavaScript cheat sheet
+  - name: Interactive flex-cheatsheet
+    url: https://yoksel.github.io/flex-cheatsheet/
+    description: |
+     Quick reference on flexbox [here](https://flexbox.malven.co/). For grid interactive cheet code [here](https://yoksel.github.io/grid-cheatsheet/) and for quick referece [here](https://grid.malven.co/). 
 
   
 - category: Favorite blogs
