@@ -1,5 +1,7 @@
 # Notes
 
+Deployed using github pages
+
 ## Code blocks
 
 For code blocs we are using [Expressive Code](https://expressive-code.com/key-features/syntax-highlighting/) plugin as it offers various features 
