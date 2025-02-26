@@ -9,6 +9,7 @@ export default function site() {
   const init = () =>{
     hookEvents();
     footerTyping();
+    externalLiksNewTab();
   }
 
   const hookEvents = () => {
@@ -87,6 +88,15 @@ export default function site() {
     }
 
     type();
+  }
+
+  const externalLiksNewTab = () => {
+    const links = document.querySelectorAll('a');
+    links.forEach(link => {
+      if (link.hostname !== window.location.hostname) {
+        link.setAttribute('target', '_blank');
+      }
+    });
   }
 
   return {

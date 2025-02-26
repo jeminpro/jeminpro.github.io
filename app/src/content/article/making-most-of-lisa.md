@@ -26,7 +26,7 @@ Your investment strategy should depend on your goals:
 -   **For first-time home buyers** (short-term): If you're planning to use your LISA to buy your first home in the next few years, a Cash LISA is likely your best option. Stock markets can be volatile in the short term, and you don't want your house deposit to shrink just as you're ready to buy.
 -   **For retirement savings** (long-term): If you're investing for retirement (to withdraw after age 60), a Stocks and Shares LISA will typically offer better growth potential over the long run.
 
-Most research shows that very few fund managers consistently beat market indexes like the S&P 500 over long periods. Rather than stressing over picking individual stocks, a simpler approach is to invest in low-cost index funds tracking either the S&P 500 or a global index for better diversification. These funds have historically returned around 10% annually on average over the past century (before inflation). At that rate, your money could potentially double every 7.2 years through the magic of compound interest!
+Most research shows that very few fund managers consistently beat market indexes like the S&P 500 over long periods. Rather than stressing over picking individual stocks, a simpler approach is to invest in low-cost index funds tracking either the S&P 500 or a global index for better diversification. These funds have [historically returned around 10% annually](https://www.investopedia.com/ask/answers/042415/what-average-annual-return-sp-500.asp#:~:text=The%20S%26P%20500%20has%20delivered,during%20the%202000%20tech%20bubble.) on average over the past century (before inflation). At that rate, your money could potentially double every 7.2 years through the magic of compound interest!
 
 ## What Could Your LISA Be Worth? A Practical Example
 
@@ -38,11 +38,11 @@ By age 50 (after 15 years):
 
 -   Total personal contributions: £60,000 (15 × £4,000)
 -   Total government bonuses: £15,000 (15 × £1,000)
--   Investment value: £179,748
+-   Investment value: [£179,748](https://www.thecalculatorsite.com/compound?a=5000&p=10&pp=yearly&y=15&m=0&rd=5000&rp=yearly&rt=deposit&rw=0&rwp=1m&rm=end&ci=yearly&cc=1&c=3&di=&wi=)
 
 Since Mr. Smith can only access this money penalty-free after turning 60, the investment continues to compound for another 10 years without additional contributions:
 
--   Final investment value at age 60: £466,220
+-   Final investment value at age 60: [£466,220](https://www.thecalculatorsite.com/compound?a=179748&p=10&pp=yearly&y=10&m=0&rd=0&rp=yearly&rt=none&rw=0&rwp=1m&rm=end&ci=yearly&cc=1&c=3&di=&wi=)
 
 That's an impressive return on his original £60,000 investment!
 
@@ -51,11 +51,11 @@ That's an impressive return on his original £60,000 investment!
 Here are some popular low-fee platforms offering Stocks and Shares LISAs:
 | Platform | Management fee | Fund fee | Share Fee | Best For|
 |--|--| --| -- | -- |
-|Hargreaves Lansdown| 0.25% per year (£45/yr max)  | None | £11.95 | Best for investments **over £30K** |
-| [AJ Bell*](https://ajbell.mention-me.com/m/ol/eh5ft-jemin-pathazhapurakkal)  | 0.25% per year (£3.50/month max = £42/yr) | £1.50 | £5 | Best for investments **over £28K**|
-| Dodl | 0.15% per year (min £1/mth and no max) | None | None | Best for **smaller investments (<£28K)**|
+|[Hargreaves Lansdown](https://www.hl.co.uk)| 0.25% per year <br> (£45/yr max)  | None | £11.95 | Best for investments **over £30K** |
+| [AJ Bell*](https://ajbell.mention-me.com/m/ol/eh5ft-jemin-pathazhapurakkal)  | 0.25% per year (max £3.50/month = £42/yr) | £1.50 | £5 | Best for investments **over £28K**|
+| [Dodl](https://www.dodl.co.uk/) | 0.15% per year (min £1/month) | None | NA | Best for **smaller investments (<£28K)**|
 
-<small>*Referral link
+<small><i>* referral link with discount bonus</i></small>
 
 While Dodl charges a lower percentage fee, other platforms become more cost-effective as your investment grows due to their fee caps.
 
@@ -64,9 +64,9 @@ Here are some **top low-fee global index funds** available on each platform:
 
 | Fund | Ongoing Charge |  Platform | Description |
 |--|--|--|--|
-|Legal & General International Index Trust Class C|0.08%(HL) 0.13%(AJ)|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-international-index-trust-c-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:B83LW32)|FTSE World (ex UK)|
+|Legal & General International Index Trust Class C|0.08%(HL) <br> 0.13%(AJ)|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/l/legal-and-general-international-index-trust-c-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:B83LW32)|FTSE World <br> (ex UK)|
 |Fidelity Index World P Acc|0.12% |[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/f/fidelity-index-world-class-p-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:BJS8SJ3)|MSCI World |
-|HSBC FTSE All-World index fund|0.13%|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/h/hsbc-ftse-all-world-index-class-c-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:BMJJJF9) [Dodl](https://www.dodl.co.uk/investments/themed)|FTSE All-World|
+|HSBC FTSE All-World index fund|0.13%|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/h/hsbc-ftse-all-world-index-class-c-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:BMJJJF9) [Dodl](https://www.dodl.co.uk/investments/themed)|FTSE All World|
 
 
 If you prefer **lower fees and are bullish on the US market**, S&P 500 funds are even cheaper:

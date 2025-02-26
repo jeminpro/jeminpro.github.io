@@ -163,6 +163,10 @@ table th {
 	border-bottom: 2px solid var(--gray-medium);
 }
 
+small{
+	color: var(--gray);
+}
+
 @media (max-width: 720px) {
 	body {
 		font-size: 18px;
