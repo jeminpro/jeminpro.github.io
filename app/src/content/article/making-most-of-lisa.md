@@ -46,21 +46,34 @@ Since Mr. Smith can only access this money penalty-free after turning 60, the in
 
 That's an impressive return on his original £60,000 investment!
 
-## Best LISA Platforms (Stocks & Shares)
+## LISA Stocks & Shares platforms
 
 Here are some popular low-fee platforms offering Stocks and Shares LISAs:
-| Platform | Management fee | Fund fee | Share Fee | Best For|
-|--|--| --| -- | -- |
-|[Hargreaves Lansdown](https://www.hl.co.uk)| 0.25% per year <br> (£45/yr max)  | None | £11.95 | Best for investments **over £30K** |
-| [AJ Bell*](https://ajbell.mention-me.com/m/ol/eh5ft-jemin-pathazhapurakkal)  | 0.25% per year (max £3.50/month = £42/yr) | £1.50 | £5 | Best for investments **over £28K**|
-| [Dodl](https://www.dodl.co.uk/) | 0.15% per year (min £1/month) | None | NA | Best for **smaller investments (<£28K)**|
+
+### Funds
+Includes unit trusts, OEICs and structured products
+
+| Platform | Annual charges| Dealing Fee | Best For|
+|--|--| --| -- | 
+| [Dodl](https://www.dodl.co.uk/) | 0.15% <br> (min £1/month) | None | Low fee |
+| [Hargreaves Lansdown](https://www.hl.co.uk)| 0.25% <br> [tiered charges](https://www.hl.co.uk/charges)  | None | No dealing fee |
+| [AJ Bell*](https://ajbell.mention-me.com/m/ol/eh5ft-jemin-pathazhapurakkal)  | 0.25% | £1.50 | |
+
+### Shares
+Includes ETFs, investment trusts, gilts and bonds
+
+| Platform | Annual charges | Dealing Fee | Best For|
+|--|--| --| -- |
+| [AJ Bell*](https://ajbell.mention-me.com/m/ol/eh5ft-jemin-pathazhapurakkal)  | 0.25%  <br> (£42/yr max) | £5 | Cheaper|
+|[Hargreaves Lansdown](https://www.hl.co.uk)| 0.25% <br> (£45/yr max)  | £11.95 | |
+
 
 <small><i>* referral link with discount bonus</i></small>
 
-While Dodl charges a lower percentage fee, other platforms become more cost-effective as your investment grows due to their fee caps.
+While Dodl charges a lower percentage fee for funds, AJ bell become more cost-effective for shares and ETFs as your investment grows due to their fee caps.
 
-## Best Low-Cost Investment Funds
-Here are some **top low-fee global index funds** available on each platform:
+## Low-Cost Investment Funds
+Here are some **low-fee global index funds** available on each platform:
 
 | Fund | Ongoing Charge |  Platform | Description |
 |--|--|--|--|
@@ -69,7 +82,7 @@ Here are some **top low-fee global index funds** available on each platform:
 |HSBC FTSE All-World index fund|0.13%|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/h/hsbc-ftse-all-world-index-class-c-accumulation) [AJ](https://www.ajbell.co.uk/market-research/FUND:BMJJJF9) [Dodl](https://www.dodl.co.uk/investments/themed)|FTSE All World|
 
 
-If you prefer **lower fees and are bullish on the US market**, S&P 500 funds are even cheaper:
+If you bullish on the US market **lower fees S&P 500 funds** are even cheaper:
 
 
 | Fund | Ongoing Charge |  Platform |
@@ -77,6 +90,25 @@ If you prefer **lower fees and are bullish on the US market**, S&P 500 funds are
 |SPDR S&P 500 ETF|0.03%|[Dodl](https://www.dodl.co.uk/investments/themed)|
 |iShares US Equity Index|0.05% |[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/B5VRGY0) [AJ](https://www.ajbell.co.uk/market-research/FUND:BYTHN33)|
 |Legal & General US Index|0.05%|[HL](https://www.hl.co.uk/funds/fund-discounts,-prices--and--factsheets/search-results/BG0QPL5) |FTSE All-World|
+
+
+## Low-Cost Exchange Traded Funds (ETF)
+
+Based on  [AJ Bell ETF screener](https://www.ajbell.co.uk/market-research/screener/etf), some **low-fee global ETF** available
+
+| ETF | Ongoing Charge |  Platform |
+|--|--|--|
+|L&G Global Equity ETF GBP|0.10% |[AJ](https://www.ajbell.co.uk/market-research/LSE:LGGG)|
+|SPDR MSCI All Cntry Wld ETF GBP|0.12%|[AJ](https://www.ajbell.co.uk/market-research/LSE:ACWI) |
+|SPDR MSCI World ETF GBP|0.12%|[AJ](https://www.ajbell.co.uk/market-research/LSE:SWLD) ||
+
+Some **low-fee S&P 500 ETF** available
+
+| ETF | Ongoing Charge |  Platform |
+|--|--|--|
+|SPDR S&P 500 ETF USD Acc GBP|0.03% |[AJ](https://www.ajbell.co.uk/market-research/LSE:SPXL)|
+|Xtrackers S&P 500 ETF 4C GBP|0.06%|[AJ](https://www.ajbell.co.uk/market-research/LSE:XDPP) |
+|iShares Core S&P 500 ETF USD Acc GBP|0.07%|[AJ](https://www.ajbell.co.uk/market-research/LSE:CSP1) |
 
 ## Final Thoughts
 
