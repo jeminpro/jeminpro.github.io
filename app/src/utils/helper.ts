@@ -8,11 +8,6 @@ export async function getPublishedSnippets() {
   return await getCollection("snippet", ({ data }) => !data.draft);
 }
 
-
-export async function getPublishedGuides() {
-  return await getCollection("guide", ({ data }) => !data.draft);
-}
-
 export function normalizeSpaceAndCase(input) {
   return input.replace(' ', '-').toLowerCase();
 }

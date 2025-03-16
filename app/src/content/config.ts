@@ -18,15 +18,6 @@ const articleSchema = z.object({
 	// tags: z.array(z.string()),
 });
 
-const guideSchema = z.object({
-	title: z.string(),
-	description: z.string(),
-	category: z.enum(tagsData.guides),		
-	publishedDate: z.coerce.date(),
-	updatedDate: z.coerce.date().optional(),
-	draft: z.boolean().optional()
-});
-
 const snippetSchema = z.object({
 	title: z.string(),
 	category: z.enum(tagsData.snippets),
@@ -46,15 +37,9 @@ const snippetCollection = defineCollection({
 	schema: snippetSchema
 });
 
-const guideCollection = defineCollection({
-	type: 'content',
-	schema: guideSchema
-});
-
 export const collections = { 
 	'article': articleColleection,
 	'snippet': snippetCollection,
-	'guide': guideCollection,
 };
 
 
@@ -63,6 +48,3 @@ export type Article = ArticleData & { slug: string };
 
 type SnippetData = z.infer<typeof snippetSchema>;
 export type Snippet = SnippetData & { slug: string };
-
-type GuideData = z.infer<typeof guideSchema>;
-export type Guide = GuideData & { slug: string };

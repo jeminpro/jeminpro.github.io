@@ -8,6 +8,7 @@ articles:
   - Finance
   - Front End
   - General
+  - Productivity
 
 
 snippets:
@@ -15,6 +16,3 @@ snippets:
   - CSS
   - JavaScript
   - SQL
-
-guides:
-  - JavaScript
