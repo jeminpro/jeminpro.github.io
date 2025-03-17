@@ -1,0 +1,93 @@
+# Changes to this file requires app rebulid in order for it to take effect.
+
+# Streching
+
+
+- name: "Yoga stretching exercise"
+  url: "https://www.youtube.com/watch?v=LCyP3F7gRC4"
+  level: "Easy"
+  category: "Stretching"
+  duration: "15"
+  medium: "Youtube"
+
+- name: "Full body stretching exercises - Stretching for beginners!"
+  url: "https://www.youtube.com/watch?v=75pA0MaLvy0"
+  level: "Easy"
+  category: "Stretching"
+  duration: "15"
+  medium: "Youtube"
+
+- name: "Full body stretching routine"
+  url: "https://youtu.be/aZ1PzhThqcU?si=XDeFRN2w8j3BAIWW&t=325"
+  level: "Easy"
+  category: "Stretching"
+  duration: "15"
+  medium: "Youtube"
+
+# Warm-up
+
+- name: "Warm up for at home workouts (No jumping)"
+  url: "https://www.youtube.com/watch?v=CSrBaHX3HxQ"
+  level: "Easy"
+  category: "Warm-up"
+  duration: "5"
+  medium: "Youtube"
+
+- name: "Pre-Workout warm up for injury prevention"
+  url: "https://www.youtube.com/watch?v=OcPs3x1vX1A"
+  level: "Easy"
+  category: "Warm-up"
+  duration: "5"
+  medium: "Youtube"
+
+- name: "wWarm up routine before your workout, all standing"
+  url: "https://www.youtube.com/watch?v=KFcnspwkyLA"
+  level: "Medium"
+  category: "Warm-up"
+  duration: "4"
+  medium: "Youtube"
+
+# Full Body
+
+- name: "Full Body Workout Routine for Beginners"
+  url: "https://www.youtube.com/watch?v=AzV3EA-1-yM&t=302s"
+  level: "Medium"
+  category: "Full Body"
+  duration: "20"
+  medium: "Youtube"
+
+- name: "Kids Workout Dance - Despicable Me and Minion Dance Workout"
+  url: "https://www.youtube.com/watch?v=QphRMalB_LM&t=77s"
+  level: "Easy"
+  category: "Full Body"
+  duration: "10"
+  medium: "Youtube"
+
+- name: "Tabata HIIT Workout (challenging + super sweaty) - No Equipment, Home Workout"
+  url: "https://www.youtube.com/watch?v=5mGeQKc97h0"
+  level: "Hard"
+  category: "Full Body"
+  duration: "35"
+  medium: "Youtube"
+
+- name: "All standing cardio abs Workout🔥 | Lose Belly Fat, High Intensity, No Repeat"
+  url: "https://www.youtube.com/watch?v=j6IJB5EGdiM&t=1154s"
+  level: "Medium"
+  category: "Full Body"
+  duration: "30"
+  medium: "Youtube"
+
+- name: "Full body cardio x hiit | Intense, Fat Burning, No Repeat, Warm Up + Cool Down "
+  url: "https://www.youtube.com/watch?v=2UP3pkgUe_g"
+  level: "Medium"
+  category: "Full Body"
+  duration: "20"
+  medium: "Youtube"
+
+- name: "Daily yoga routine for beginners (Fit tuber)"
+  url: "https://youtu.be/dAqQqmaI9vY?si=0Pb5els820C3RWY4"
+  level: "Easy"
+  category: "Full Body"
+  duration: "30"
+  medium: "Youtube"
+

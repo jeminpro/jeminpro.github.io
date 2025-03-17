@@ -1,11 +1,7 @@
 import { defineCollection, z } from 'astro:content';
-import fs from "fs";
-import path from "path";
-import yaml from "yaml";
+import {getYamlToJsonData} from "../utils/helper";
 
-const filePath = path.resolve("./src/data/tags.yaml");
-const fileContents = fs.readFileSync(filePath, "utf8");
-const tagsData = yaml.parse(fileContents);
+const tagsData = getYamlToJsonData("./src/data/tags.yaml");
 
 const articleSchema = z.object({
 	title: z.string(),

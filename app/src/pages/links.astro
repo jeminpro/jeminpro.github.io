@@ -1,14 +1,9 @@
 ---
 import Layout from "../layouts/BaseLayout.astro";
-import fs from "fs";
-import path from "path";
-import yaml from "yaml";
 import { marked } from "marked";
+import {getYamlToJsonData} from "../utils/helper";
 
-const filePath = path.resolve("./src/data/resourcesData.yaml");
-const fileContents = fs.readFileSync(filePath, "utf8");
-const resourcesData = yaml.parse(fileContents);
-
+const resourcesData = getYamlToJsonData("./src/data/resourcesData.yaml");
 //console.log(resourcesData);
 ---
 

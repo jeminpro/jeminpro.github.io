@@ -1,0 +1,42 @@
+---
+title: 'Exercise routines'
+description: 'List of exercise routines'
+publishedDate: '2025-03-17'
+category: Workout
+---
+
+import {getYamlToJsonData} from "../../utils/helper";
+import { Icon } from 'astro-icon/components'
+
+
+{(() => {
+  const exercises = getYamlToJsonData("./src/data/exercise.yaml");
+
+  return (
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Level</th>
+          <th>Duration</th>
+        </tr>
+      </thead>
+      <tbody>
+      {
+        exercises.map((exercise) => (
+          <tr>
+            <td><a href={exercise.url}><Icon name="logos:youtube-icon"/></a></td>
+            <td>{exercise.name}</td>
+            <td>{exercise.category}</td>
+            <td>{exercise.level}</td>
+            <td>{exercise.duration} mins</td>              
+          </tr>
+        ))
+      }
+      </tbody>
+    </table>
+  );
+
+})()}

@@ -80,8 +80,7 @@ All commands are run from the root of the project, from a terminal:
 
 ## Astro Icon and Iconify
 [Astro Icon](https://www.astroicon.dev) is used to load the icons from local or icon sets like iconify
-[Iconify](https://iconify.design/) is a home of open source icon sets, browse icons [here](https://icon-sets.iconify.design/). Currently installed [fonwawsome](https://icones.js.org/collection/fa6-solid) 
-
+[Iconify](https://iconify.design/) is a home of open source icon sets, browse icons [here](https://icon-sets.iconify.design/). Currently installed [fonwawsome](https://icones.js.org/collection/fa6-solid) [Logo](https://icones.js.org/collection/logos)
 
 Refer to astro icon document [Customizing Icons](https://www.astroicon.dev/guides/customization/) especially section `Install dependency`
 
