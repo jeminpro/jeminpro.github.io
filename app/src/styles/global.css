@@ -429,18 +429,17 @@ small{
 
 	}
 
-
 /*** Exercise page **************/
+
 .channels {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
-	}
+}
 
-	.channel {
+.channel {
 	margin: 10px;
-	}
+}
 
-	.channel img {
+.channel img {
 	border-radius: 50%;
-	}
+}
