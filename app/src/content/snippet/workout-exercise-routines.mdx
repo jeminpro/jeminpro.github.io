@@ -5,14 +5,14 @@ publishedDate: '2025-03-17'
 category: Workout
 ---
 
-import {getYamlToJsonData} from "../../utils/helper";
+import { getYamlToJsonData } from "../../utils/helper";
 import { Icon } from 'astro-icon/components'
 
+export const workout = getYamlToJsonData("./src/data/workout.yaml");
 
 {(() => {
-  const exercises = getYamlToJsonData("./src/data/exercise.yaml");
-
   return (
+    <>
     <table>
       <thead>
         <tr>
@@ -25,7 +25,7 @@ import { Icon } from 'astro-icon/components'
       </thead>
       <tbody>
       {
-        exercises.map((exercise) => (
+        workout.exercises.map((exercise) => (
           <tr>
             <td><a href={exercise.url}><Icon name="logos:youtube-icon"/></a></td>
             <td>{exercise.name}</td>
@@ -37,6 +37,29 @@ import { Icon } from 'astro-icon/components'
       }
       </tbody>
     </table>
+    </>
+  );
+
+})()}
+
+
+## Fitness channels
+
+
+{(() => {
+  return (
+    <>
+    
+    <div className="channels">
+    {
+        workout.channels.map((channel) => (
+          <div className="channel"> 
+            <a href={channel.url}><img src={channel.channelLogo} alt={channel.name} /></a>          
+          </div>
+        ))
+    }
+    </div>
+    </>
   );
 
 })()}

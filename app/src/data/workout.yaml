@@ -2,6 +2,7 @@
 
 # Streching
 
+exercises:
 
 - name: "Yoga stretching exercise"
   url: "https://www.youtube.com/watch?v=LCyP3F7gRC4"
@@ -91,3 +92,48 @@
   duration: "30"
   medium: "Youtube"
 
+channels:
+
+- name: "growingannanas"
+  url: "https://www.youtube.com/@growingannanas"
+  channelLogo: "https://yt3.googleusercontent.com/ytc/AIdro_m59N6Yys5ZGin7QpYC047fGfJY86bhbDJRhDjvrKlAVec=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Summerfunfitness"
+  url: "https://www.youtube.com/@Summerfunfitness"
+  channelLogo: "https://yt3.googleusercontent.com/QNiJ1WxAc3fVQwe0ozbebX19Jt5ftTsu239WYpn3wF7mhvtYs326cMYmph0AJQppJwhYikVrjQ=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Saurabh Bothra"
+  url: "https://www.youtube.com/@saurabhbothra"
+  channelLogo: "https://yt3.googleusercontent.com/5bGedDJwEGYBOOpMg4J7tZbvQFHDmlNowXOlFxNjo7oflq1qrRS2tEIFRYjnoHEeZ_EzWKUnDA=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "MadFit"
+  url: "https://www.youtube.com/@MadFit"
+  channelLogo: "https://yt3.googleusercontent.com/IpjXoqLDSLHidmD_gnmeBkak922B5OaLkc8MiTI3KUlKiFKwGNeZZMOikbyMnnuk0f5uL3UY=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "YOGABODY"
+  url: "https://www.youtube.com/yogabody-official"
+  channelLogo: "https://yt3.googleusercontent.com/ypihB1etVq2cNSOuwVHiTV0M1DNCcnkG52h6nwYgIwxyOY0xqhQhgu964IFfRl9izw7HIYzb=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Milestone Strength"
+  url: "https://www.youtube.com/@MilestoneStrength"
+  channelLogo: "https://yt3.googleusercontent.com/ytc/AIdro_l57vtZsebJfPmW2V_YBOpTgy-2NiVWrd2VTVoBtLQuWQ=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Hybrid Calisthenics"
+  url: "https://www.youtube.com/@HybridCalisthenics"
+  channelLogo: "https://yt3.googleusercontent.com/ytc/AIdro_lHDTeNbNPLCIuChuhtXjCMZ6S6UQ6nPhDKewcrZj5i1Q=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Eleni Fit"
+  url: "https://www.youtube.com/@EleniFit"
+  channelLogo: "https://yt3.googleusercontent.com/_AL_4i3G8A0aThKe4mMlufa8RGksrm_jjpyF0o7j2_X2nzjdevZ5QRt9wzSv6DgHxEl763bvww=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Oliver Sjostrom"
+  url: "https://www.youtube.com/@OliverSjostrom"
+  channelLogo: "https://yt3.googleusercontent.com/5wkPb1dH5fu5Reg1FrS_2xJwLtneePRNthtYQpOjdFq-xT4M1gsZfBWyLWm6Rxkioav43ny2=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Jessica Valant"
+  url: "https://www.youtube.com/@Jessicasvalant"
+  channelLogo: "https://yt3.googleusercontent.com/2seQTC7yBHvyLvoreCP3SDwZ6tIix7xBf_y0xvxHM6qNBPnH2Sj8gfkaL6u1zaPEHtIKTmbpTQ=s160-c-k-c0x00ffffff-no-rj"
+
+- name: "Jae-ho - Trainer & Physical Therapist"
+  url: "https://www.youtube.com/@Jaeho_Fitness"
+  channelLogo: "https://yt3.googleusercontent.com/esGR908z_TxGGN90AY6xfkFtEg7tiJWAbQnwk2kbVir9DA_qow1EHq1h5nEhd6GnbZSac8y0EXY=s160-c-k-c0x00ffffff-no-rj"

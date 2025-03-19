@@ -428,3 +428,19 @@ small{
 		border-radius: 10px;
 
 	}
+
+
+/*** Exercise page **************/
+.channels {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	}
+
+	.channel {
+	margin: 10px;
+	}
+
+	.channel img {
+	border-radius: 50%;
+	}
