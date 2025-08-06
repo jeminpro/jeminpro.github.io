@@ -1,7 +1,7 @@
 ---
 title: Voice typing
 description: I recently discovered voice typing on both my mobile and laptop, and it has been a game-changer for my productivity while giving my fingers a much-needed break! If you haven't tried it yet, here's why you should consider making it part of your daily digital routine.
-publishedDate: '2025-03-016'
+publishedDate: '2025-03-16'
 category: Productivity
 ---
 
