@@ -20,7 +20,7 @@ const categories = [...new Set(snippets.map(snippet => snippet.data.category))].
 				<section>
 					{
 						snippets.filter(snippet => snippet.data.category === category).map((snippet) => (
-							<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />
+							<SnippetItem snippet={{ ...snippet.data, slug: snippet.id }} />
 						))
 					}
 				</section>

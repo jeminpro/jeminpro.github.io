@@ -28,7 +28,7 @@ const filteredSnippets = snippets.filter(snippet => normalizeSpaceAndCase(snippe
 	<section>
 		{
 			filteredSnippets.map((snippet) => (
-				<SnippetItem snippet={{ ...snippet.data, slug: snippet.slug }} />			
+				<SnippetItem snippet={{ ...snippet.data, slug: snippet.id }} />			
 			))
 		}
 	</section>

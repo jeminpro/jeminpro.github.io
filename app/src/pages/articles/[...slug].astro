@@ -1,4 +1,5 @@
 ---
+import { render } from 'astro:content';
 import { getPublishedArticles } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
@@ -7,7 +8,7 @@ import BreadCrumbs from '../../components/BreadCrumbs.astro';
 export async function getStaticPaths() {
 	const posts = await getPublishedArticles();
 	return posts.map((post) => ({
-		params: { slug: post.slug },
+		params: { slug: post.id },
 		props: post,
 	}));
 }
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 const article = Astro.props;
 const { title, description, category, publishedDate, updatedDate } = article.data;
 
-const { Content } = await article.render();
+const { Content } = await render(article);
 ---
 
 <Layout title={title} description={description}>	

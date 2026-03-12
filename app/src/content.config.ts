@@ -1,17 +1,22 @@
-import { defineCollection, z } from 'astro:content';
-import {getYamlToJsonData} from "../utils/helper";
+import { defineCollection } from 'astro:content';
+import { z } from 'astro/zod';
+import {getYamlToJsonData} from "./utils/helper";
+import { glob } from 'astro/loaders';
 
 const tagsData = getYamlToJsonData("./src/data/tags.yaml");
+
+// const tagsData = yaml.parse(fs.readFileSync(tagsFilePath, 'utf8')) as {
+// 	articles: [string, ...string[]];
+// 	snippets: [string, ...string[]];
+// };
 
 const articleSchema = z.object({
 	title: z.string(),
 	description: z.string(),
-	category: z.enum(tagsData.articles),		
+	category: z.enum(tagsData.articles),
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
 	draft: z.boolean().optional()
-
-	// tags: z.array(z.string()),
 });
 
 const snippetSchema = z.object({
@@ -20,16 +25,16 @@ const snippetSchema = z.object({
 	description: z.string().optional(),
 	publishedDate: z.coerce.date(),
 	updatedDate: z.coerce.date().optional(),
-	draft: z.boolean().optional()
+	draft: z.boolean().optional(),
 });
 
 const articleColleection = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/article' }),
 	schema: articleSchema
 });
 
 const snippetCollection = defineCollection({
-	type: 'content',
+	loader: glob({ pattern: '**/*.{md,mdx}', base: './src/content/snippet' }),
 	schema: snippetSchema
 });
 

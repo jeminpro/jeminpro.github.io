@@ -1,4 +1,5 @@
 ---
+import { render } from 'astro:content';
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
@@ -7,14 +8,14 @@ import BreadCrumbs from '../../components/BreadCrumbs.astro';
 export async function getStaticPaths() {
 	const snippets = await getPublishedSnippets();
 	return snippets.map((snippet) => ({
-		params: { slug: snippet.slug },
+		params: { slug: snippet.id },
 		props: snippet,
 	}));
 }
 
 const snippet = Astro.props;
 const { title, category, description, publishedDate, updatedDate } = snippet.data;
-const { Content } = await snippet.render();
+const { Content } = await render(snippet);
 ---
 
 <Layout title={title} description={description}>

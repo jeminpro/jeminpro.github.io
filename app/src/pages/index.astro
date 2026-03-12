@@ -33,7 +33,7 @@ const articles = (await getPublishedArticles())
 			{
 				articles.map((article) => (
 					<ArticleItem
-						article={{ ...article.data, slug: article.slug }}
+						article={{ ...article.data, slug: article.id }}
 					/>
 				))
 			}

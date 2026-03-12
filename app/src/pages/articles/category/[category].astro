@@ -28,7 +28,7 @@ const filteredArticles = articles.filter(article => normalizeSpaceAndCase(articl
 	<section>
 		{
 			filteredArticles.map((article) => (
-				<ArticleItem article={{ ...article.data, slug: article.slug }} />			
+				<ArticleItem article={{ ...article.data, slug: article.id }} />			
 			))
 		}
 	</section>

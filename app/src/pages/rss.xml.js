@@ -6,7 +6,7 @@ export async function GET(context) {
 	const posts = await getCollection('article');
 	const postItems = posts.map((post) => ({
 		...post.data,
-		link: `/articles/${post.slug}/`,
+		link: `/articles/${post.id}/`,
 		pubDate:post.data.publishedDate
 	}));
 
