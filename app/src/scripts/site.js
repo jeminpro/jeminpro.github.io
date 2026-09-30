@@ -12,6 +12,7 @@ export default function site() {
     externalLiksNewTab();
     setupModals();
     setupTaskLists();
+    setupExerciseLinks();
     setupSearch();
     setupToc();
   }
@@ -136,6 +137,42 @@ export default function site() {
   const setupTaskLists = () => {
     document.querySelectorAll(".content .task-list-item input[type='checkbox']").forEach((box) => {
       box.disabled = false;
+    });
+  }
+
+  const setupExerciseLinks = () => {
+    const ua = navigator.userAgent;
+    const isAndroid = /Android/i.test(ua);
+    const isIOS = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (!isAndroid && !isIOS) return;
+
+    document.querySelectorAll(".content a.exercise-yt").forEach((link) => {
+      link.addEventListener("click", (event) => {
+        const url = new URL(link.href);
+        const videoId = url.searchParams.get("v");
+        const search = url.searchParams.get("search_query");
+        const web = link.href;
+        event.preventDefault();
+
+        if (isAndroid) {
+          const path = videoId
+            ? `www.youtube.com/watch?v=${encodeURIComponent(videoId)}`
+            : `www.youtube.com/results?search_query=${encodeURIComponent(search || "")}`;
+          window.location.href = `intent://${path}#Intent;package=com.google.android.youtube;scheme=https;S.browser_fallback_url=${encodeURIComponent(web)};end`;
+          return;
+        }
+
+        const appUrl = videoId
+          ? `youtube://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`
+          : `youtube://www.youtube.com/results?search_query=${encodeURIComponent(search || "")}`;
+        const started = Date.now();
+        window.location.href = appUrl;
+        window.setTimeout(() => {
+          if (!document.hidden && Date.now() - started < 2000) {
+            window.location.href = web;
+          }
+        }, 900);
+      });
     });
   }
 

@@ -7,7 +7,7 @@ category: Workout
 
 Train 3 days a week (with at least one rest day in between sessions.):
 
-Monday - Wednesday - Friday
+`Monday` - `Wednesday` - `Friday`
 
 ### Workout A
 - [ ] <button type="button" command="show-modal" commandfor="modal-goblet-squat">Goblet Squat</button> 3 × 10
@@ -123,7 +123,12 @@ So the system is simply:
 
 ### Goblet Squat
 
-<iframe src="https://www.youtube-nocookie.com/embed/9KzZD_n2r64" title="How to goblet squat" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/goblet-squat.gif" alt="Goblet squat with one dumbbell held at the chest" width="1080" height="1080">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=9KzZD_n2r64">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+goblet+squat">Search on YouTube</a>
+</div>
 
 **How to do it.** Hold one dumbbell upright against your chest, elbows pointing down. Feet about shoulder-width, toes slightly out. Sit down between your hips until your elbows meet the inside of your knees, then stand by pushing the floor away.
 
@@ -137,7 +142,12 @@ So the system is simply:
 
 ### Dumbbell Chest Press
 
-<iframe src="https://www.youtube-nocookie.com/embed/5cy8pPT0bs0" title="How to dumbbell bench press" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/dumbbell-chest-press.gif" alt="Dumbbell chest press on a bench" width="1000" height="1000">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=5cy8pPT0bs0">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bench+press">Search on YouTube</a>
+</div>
 
 **How to do it.** Sit and rest the dumbbells on your thighs, then lie back so they start over your chest. Lower until you feel a stretch, elbows about 45° from your sides, then press back up. Sit up the same way you lay down.
 
@@ -151,7 +161,12 @@ So the system is simply:
 
 ### One-Arm Dumbbell Row
 
-<iframe src="https://www.youtube-nocookie.com/embed/epSR-ma7BsY" title="How to do a one-arm dumbbell row" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/one-arm-dumbbell-row.gif" alt="One-arm dumbbell row supported on a bench" width="768" height="768">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=epSR-ma7BsY">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=one+arm+dumbbell+row">Search on YouTube</a>
+</div>
 
 **How to do it.** Support the opposite hand and knee on a bench so your back is flat and roughly parallel to the floor. Let the dumbbell hang, then pull the elbow toward your hip until the weight reaches your lower ribs. Lower it until the arm is straight.
 
@@ -165,7 +180,12 @@ So the system is simply:
 
 ### Romanian Deadlift
 
-<iframe src="https://www.youtube-nocookie.com/embed/RApyTtH6qAo" title="How to deadlift with dumbbells and fix RDL form" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/romanian-deadlift.gif" alt="Dumbbell Romanian deadlift" width="460" height="460">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=RApyTtH6qAo">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift">Search on YouTube</a>
+</div>
 
 **How to do it.** Hold the dumbbells in front of your thighs with soft knees. Push your hips back until the hamstrings stretch, keeping the weights close to your legs and your back straight. Stand by driving the hips forward. Squeeze the glutes without leaning back.
 
@@ -179,7 +199,12 @@ So the system is simply:
 
 ### Lateral Raise
 
-<iframe src="https://www.youtube-nocookie.com/embed/q9LhHrHShs4" title="How to perform the dumbbell lateral raise" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/lateral-raise.gif" alt="Standing dumbbell lateral raise" width="1080" height="1080">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=q9LhHrHShs4">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+lateral+raise">Search on YouTube</a>
+</div>
 
 **How to do it.** Stand tall with a light dumbbell in each hand and a slight bend in the elbows. Raise your arms out to the sides until they are about shoulder height, leading with the elbows. Lower slowly.
 
@@ -193,7 +218,12 @@ So the system is simply:
 
 ### Dumbbell Curl
 
-<iframe src="https://www.youtube-nocookie.com/embed/F1B4WK_6oH0" title="How to do a dumbbell bicep curl" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/dumbbell-curl.gif" alt="Standing dumbbell curl" width="1040" height="690">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=F1B4WK_6oH0">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bicep+curl">Search on YouTube</a>
+</div>
 
 **How to do it.** Stand tall, palms forward, elbows pinned near your sides. Curl toward your shoulders, pause, then lower all the way until your arms are straight.
 
@@ -207,7 +237,12 @@ So the system is simply:
 
 ### Bulgarian Split Squat
 
-<iframe src="https://www.youtube-nocookie.com/embed/4Qnfw1FqWxQ" title="Bulgarian split squat form tutorial" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/bulgarian-split-squat.gif" alt="Dumbbell Bulgarian split squat" width="1080" height="1080">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=4Qnfw1FqWxQ">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bulgarian+split+squat">Search on YouTube</a>
+</div>
 
 **How to do it.** Stand a stride in front of a bench and rest the top of the back foot on it. Keep most of your weight on the front foot. Lower until the front thigh is about parallel, then drive through that foot to stand. Finish the reps, then switch legs.
 
@@ -221,7 +256,12 @@ So the system is simply:
 
 ### Dumbbell Shoulder Press
 
-<iframe src="https://www.youtube-nocookie.com/embed/qEwKCR5JCog" title="How to dumbbell shoulder press" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/dumbbell-shoulder-press.gif" alt="Standing dumbbell shoulder press" width="1080" height="1080">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=qEwKCR5JCog">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+shoulder+press">Search on YouTube</a>
+</div>
 
 **How to do it.** Sit or stand with the dumbbells at shoulder height and the elbows slightly in front of your body. Press straight up until the arms are nearly straight, then lower to about shoulder height. Keep the wrists straight and the ribs down.
 
@@ -235,7 +275,12 @@ So the system is simply:
 
 ### Overhead Triceps Extension
 
-<iframe src="https://www.youtube-nocookie.com/embed/fMOd6RmMlWk" title="How to do a standing overhead dumbbell triceps extension" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen loading="lazy"></iframe>
+<img class="exercise-gif" src="/images/workout/overhead-triceps-extension.gif" alt="Standing overhead dumbbell triceps extension" width="480" height="270">
+
+<div class="exercise-actions">
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=fMOd6RmMlWk">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/results?search_query=overhead+dumbbell+triceps+extension">Search on YouTube</a>
+</div>
 
 **How to do it.** Hold one dumbbell overhead with both hands cupping one end. Point the elbows forward and keep them close to your ears. Bend only at the elbows to lower the weight behind your head, then straighten the arms.
 
