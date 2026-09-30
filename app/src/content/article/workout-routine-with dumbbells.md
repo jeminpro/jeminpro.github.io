@@ -5,9 +5,10 @@ publishedDate: '2026-09-30'
 category: Workout
 ---
 
-Train 3 days a week (with at least one rest day in between sessions.):
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=cmple9fw65w&t=10">Warm Up 1</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=McIrh35QRM8">Warm Up 2</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=c0VxUFHdYzs">Warm Up 3</a>
 
-`Monday` - `Wednesday` - `Friday`
 
 ### Workout A
 - [ ] <button type="button" command="show-modal" commandfor="modal-goblet-squat">Goblet Squat</button> 3 × 10
@@ -26,10 +27,20 @@ Train 3 days a week (with at least one rest day in between sessions.):
 - [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-chest-press">Dumbbell Chest Press</button> 3 × 10
 - [ ] <button type="button" command="show-modal" commandfor="modal-overhead-triceps-extension">Overhead Triceps Extension</button> 2 × 10
 
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=FdUFhUuJl1E">Cool Down 1</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=McIrh35QRM8w&t=23">Cool Down 2</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=R56k41NLIoI">Cool Down 3</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=NUIMZ4IcBy8">Cool Down 4</a>
+
+Train 3 days a week, with at least one rest day in between sessions.
+
+`Monday` - `Wednesday` - `Friday`
+
 Alternate them:
 
 **Week 1:** A - B - A  
 **Week 2:** B - A - B
+
 
 --- 
 

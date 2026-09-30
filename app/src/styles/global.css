@@ -857,7 +857,7 @@ html:has(.content dialog[open]) {
 	margin: 0.75rem 0 1rem;
 }
 
-.content dialog a.exercise-yt {
+a.exercise-yt {
 	display: inline-flex;
 	align-items: center;
 	gap: 0.45rem;
@@ -873,7 +873,7 @@ html:has(.content dialog[open]) {
 	transition: border-color var(--transition-fast), background var(--transition-fast), color var(--transition-fast);
 }
 
-.content dialog a.exercise-yt::before {
+a.exercise-yt::before {
 	content: "";
 	flex: 0 0 auto;
 	width: 1em;
@@ -881,23 +881,23 @@ html:has(.content dialog[open]) {
 	background-color: currentColor;
 }
 
-.content dialog a.exercise-yt[href*="watch?v"]::before {
+a.exercise-yt[href*="watch?v"]::before {
 	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 4.4v7.2L12 8z'/%3E%3C/svg%3E") center / contain no-repeat;
 	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='black' d='M6.2 4.4v7.2L12 8z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.content dialog a.exercise-yt[href*="search_query"]::before {
+a.exercise-yt[href*="search_query"]::before {
 	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='7' cy='7' r='4.2' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M10.2 10.2 13.4 13.4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ccircle cx='7' cy='7' r='4.2' fill='none' stroke='black' stroke-width='1.6'/%3E%3Cpath d='M10.2 10.2 13.4 13.4' stroke='black' stroke-width='1.6' stroke-linecap='round'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.content dialog a.exercise-yt:hover {
+a.exercise-yt:hover {
 	border-color: var(--brand);
 	background: var(--brand-subtle);
 	color: var(--brand);
 }
 
-.content dialog a.exercise-yt:focus-visible {
+a.exercise-yt:focus-visible {
 	outline: 2px solid var(--brand);
 	outline-offset: 2px;
 }
