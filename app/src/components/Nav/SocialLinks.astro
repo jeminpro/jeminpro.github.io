@@ -33,17 +33,20 @@ const {className} = Astro.props;
 		padding: 1.5rem;
 	}
 
-	.social-desktop {
-		display: none;
+	.social-footer {
+		display: flex;
+		justify-content: center;
+		gap: 1.25rem;
+		padding: 0.15rem 0 0.85rem;
 	}
 
-	@media (min-width: 750px) {	
+	.social-footer a {
+		color: var(--gray-dark);
+	}
 
-		.social-desktop {
-			display: flex;
-			gap: 1rem;
-			padding: 2rem;
-		}
+	.social-footer a:hover,
+	.social-footer a:focus-visible {
+		color: var(--accent);
 	}
 
 </style>
