@@ -431,3 +431,32 @@ You can simply copy an emoji from a source like [Emojipedia](https://emojipedia.
 
 😊
 
+
+## Collapsed sections
+
+
+```md
+<details>
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section.
+
+You can add any markdown content including links, images and table...
+
+</details>
+```
+
+
+<details>
+
+<summary>Tips for collapsed sections</summary>
+
+### You can add a header
+
+You can add text within a collapsed section.
+
+You can add any markdown content including links, images and table...
+
+</details>

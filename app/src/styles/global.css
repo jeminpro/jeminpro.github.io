@@ -429,6 +429,80 @@ small{
 
 	}
 
+	.content details {
+		margin: 1.25rem 0 1.5rem;
+		border: 1px solid #dad9d9;
+		border-radius: 8px;
+		background: #fff;
+		box-shadow: rgba(0, 0, 0, 0.06) 0 2px 8px -2px;
+		overflow: hidden;
+	}
+
+	.content details > summary {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		padding: 0.7rem 1rem;
+		color: var(--gray-dark);
+		font-weight: 600;
+		line-height: 1.4;
+		cursor: pointer;
+		list-style: none;
+		user-select: none;
+	}
+
+	.content details > summary::-webkit-details-marker,
+	.content details > summary::marker {
+		display: none;
+		content: "";
+	}
+
+	.content details > summary::after {
+		content: "";
+		flex: 0 0 auto;
+		width: 0.45rem;
+		height: 0.45rem;
+		margin-left: auto;
+		border-right: 2px solid var(--gray);
+		border-bottom: 2px solid var(--gray);
+		transform: rotate(45deg);
+		transition: transform 200ms ease;
+	}
+
+	.content details[open] > summary {
+		border-bottom: 1px solid #e6e6e6;
+	}
+
+	.content details[open] > summary::after {
+		transform: rotate(225deg);
+	}
+
+	.content details > summary:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: -2px;
+	}
+
+	.content details > :not(summary) {
+		margin-left: 1rem;
+		margin-right: 1rem;
+	}
+
+	.content details > summary + * {
+		margin-top: 1rem;
+	}
+
+	.content details > :last-child {
+		margin-bottom: 1rem;
+	}
+
+	.content details :is(h1, h2, h3, h4, h5, h6) {
+		margin-top: 1.25rem;
+	}
+
+	.content details > summary + :is(h1, h2, h3, h4, h5, h6) {
+		margin-top: 1rem;
+	}
+
 /*** Exercise page **************/
 
 .channels {
