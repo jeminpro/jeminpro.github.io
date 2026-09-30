@@ -25,9 +25,9 @@ const { Content, headings } = await render(snippet);
 			<BreadCrumbs></BreadCrumbs>
 			<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
 			<p>{description}</p>
-			<TableOfContents headings={headings} />
+			<TableOfContents headings={headings} contentHtml={snippet.rendered?.html} />
 			<Content />
 		</article>
-		<TableOfContents headings={headings} variant="side" />
+		<TableOfContents headings={headings} contentHtml={snippet.rendered?.html} variant="side" />
 	</div>
 </Layout>

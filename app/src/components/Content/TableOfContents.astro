@@ -13,13 +13,41 @@ interface TocItem extends Heading {
 
 interface Props {
 	headings: Heading[];
+	contentHtml?: string;
 	variant?: "inline" | "side";
 }
 
-const { headings, variant = "inline" } = Astro.props;
+const { headings, contentHtml = "", variant = "inline" } = Astro.props;
+
+function excludedHeadingIds(html: string) {
+	const excluded = new Set<string>();
+	const tags = html.matchAll(/<\/?(details|dialog|h[1-6])\b[^>]*>/gi);
+	let depth = 0;
+
+	for (const match of tags) {
+		const raw = match[0];
+		const name = match[1].toLowerCase();
+		const closing = raw[1] === "/";
+
+		if (name === "details" || name === "dialog") {
+			if (closing) depth = Math.max(0, depth - 1);
+			else if (!raw.endsWith("/>")) depth += 1;
+			continue;
+		}
+
+		if (closing || depth === 0) continue;
+		const id = raw.match(/\sid=(?:"([^"]+)"|'([^']+)')/i);
+		const value = id?.[1] ?? id?.[2];
+		if (value) excluded.add(value);
+	}
+
+	return excluded;
+}
+
+const hiddenIds = excludedHeadingIds(contentHtml);
 
 function selectHeadings(allHeadings: Heading[]) {
-	const usable = allHeadings.filter((heading) => heading.slug && heading.depth >= 1 && heading.depth <= 3);
+	const usable = allHeadings.filter((heading) => heading.slug && !hiddenIds.has(heading.slug) && heading.depth >= 1 && heading.depth <= 3);
 	const hasSectionHeading = usable.some((heading) => heading.depth === 2);
 	const selected = hasSectionHeading ? usable.filter((heading) => heading.depth >= 2) : usable;
 	return selected.length >= 2 ? selected : [];
