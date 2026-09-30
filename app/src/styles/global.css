@@ -399,6 +399,7 @@ small{
 
 	.content :is(h1, h2, h3, h4, h5, h6) {
 		line-height: 1.3;
+		scroll-margin-top: 1.25rem;
 	}
 
 	.content h1 {
@@ -681,6 +682,106 @@ small{
 		background-color: var(--accent);
 		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round' d='M3.2 8.3 6.4 11.4 12.8 4.6'/%3E%3C/svg%3E");
 		box-shadow: none;
+	}
+
+	.toc-side {
+		display: none;
+	}
+
+	.toc-label {
+		margin: 0 0 0.65rem;
+		color: var(--gray);
+		font-size: 0.78rem;
+		font-weight: 700;
+		letter-spacing: 0.06em;
+		line-height: 1.2;
+		text-transform: uppercase;
+	}
+
+	.toc .toc-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.toc .toc-list .toc-list {
+		margin-left: 0.75rem;
+	}
+
+	.toc a {
+		display: block;
+		padding: 0.28rem 0.35rem 0.28rem 0.7rem;
+		border-left: 2px solid transparent;
+		border-radius: 0 4px 4px 0;
+		color: var(--gray);
+		font-size: 0.92rem;
+		line-height: 1.35;
+		text-decoration: none;
+	}
+
+	.toc a:hover,
+	.toc a:focus-visible {
+		color: var(--accent);
+	}
+
+	.toc a:focus-visible {
+		outline: 2px solid var(--accent);
+		outline-offset: 2px;
+	}
+
+	.toc a.is-active {
+		border-left-color: var(--accent);
+		color: var(--accent);
+		font-weight: 600;
+	}
+
+	.toc-root {
+		border-left: 1px solid #e6e8eb;
+	}
+
+	.content .toc-inline details > .toc-root {
+		margin: 0.35rem 0.85rem 0.85rem;
+	}
+
+	@media (min-width: 1100px) {
+		main:has(.toc-side) {
+			width: 61.5rem;
+			max-width: calc(100% - 2em);
+		}
+
+		.post-layout:has(.toc-side) {
+			display: grid;
+			grid-template-columns: minmax(0, 45rem) 14rem;
+			column-gap: 2.5rem;
+			align-items: start;
+			justify-content: center;
+		}
+
+		.post-layout:has(.toc-side) .content {
+			width: auto;
+			max-width: none;
+			margin: 0;
+		}
+
+		.post-layout:has(.toc-side) .toc-inline {
+			display: none;
+		}
+
+		.toc-side {
+			display: block;
+			position: sticky;
+			top: 1.5rem;
+			max-height: calc(100vh - 3rem);
+			margin-top: 2.75rem;
+			overflow: auto;
+			scrollbar-width: thin;
+		}
+	}
+
+	@media (prefers-reduced-motion: no-preference) {
+		html:has(.toc) {
+			scroll-behavior: smooth;
+		}
 	}
 
 /*** Exercise page **************/

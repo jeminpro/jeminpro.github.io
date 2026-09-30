@@ -13,6 +13,7 @@ export default function site() {
     setupModals();
     setupTaskLists();
     setupSearch();
+    setupToc();
   }
 
   const hookEvents = () => {
@@ -285,6 +286,74 @@ export default function site() {
       if (event.key !== "Escape" || root.hidden) return;
       closeSearch();
     });
+  }
+
+  const setupToc = () => {
+    const toc = document.querySelector(".toc");
+    if (!toc) return;
+
+    const headingEls = [...document.querySelectorAll(".toc-root a")].reduce((headings, link) => {
+      const id = decodeURIComponent(link.getAttribute("href").slice(1));
+      if (headings.some((heading) => heading.id === id)) return headings;
+      const el = document.getElementById(id);
+      if (el) headings.push(el);
+      return headings;
+    }, []);
+
+    if (!headingEls.length) return;
+
+    let activeId = "";
+    let frame = 0;
+
+    const revealInSideToc = (id) => {
+      const side = document.querySelector(".toc-side");
+      if (!side || side.offsetParent === null || side.scrollHeight <= side.clientHeight) return;
+      const link = side.querySelector(`a[href="#${CSS.escape(id)}"]`);
+      if (!link) return;
+
+      const sideRect = side.getBoundingClientRect();
+      const linkRect = link.getBoundingClientRect();
+      if (linkRect.top < sideRect.top + 8) {
+        side.scrollTop -= sideRect.top + 8 - linkRect.top;
+      } else if (linkRect.bottom > sideRect.bottom - 8) {
+        side.scrollTop += linkRect.bottom - (sideRect.bottom - 8);
+      }
+    };
+
+    const setActive = () => {
+      const nearBottom = window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 4;
+      let current = headingEls[0];
+
+      if (nearBottom) {
+        current = headingEls[headingEls.length - 1];
+      } else {
+        for (const heading of headingEls) {
+          if (heading.getBoundingClientRect().top <= 120) current = heading;
+        }
+      }
+
+      if (current.id === activeId) return;
+      activeId = current.id;
+
+      document.querySelectorAll(".toc a").forEach((link) => {
+        const active = link.getAttribute("href") === `#${current.id}`;
+        link.classList.toggle("is-active", active);
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
+      });
+
+      revealInSideToc(current.id);
+    };
+
+    const onScroll = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(setActive);
+    };
+
+    setActive();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("hashchange", onScroll);
+    window.addEventListener("load", onScroll);
   }
 
   const externalLiksNewTab = () => {

@@ -1,0 +1,28 @@
+---
+import TocList from "./TocList.astro";
+
+interface TocItem {
+	depth: number;
+	slug: string;
+	text: string;
+	children: TocItem[];
+}
+
+interface Props {
+	items: TocItem[];
+	nested?: boolean;
+}
+
+const { items, nested = false } = Astro.props;
+---
+
+<ol class:list={["toc-list", !nested && "toc-root"]}>
+	{
+		items.map((item) => (
+			<li>
+				<a href={`#${item.slug}`}>{item.text}</a>
+				{item.children.length > 0 && <TocList items={item.children} nested />}
+			</li>
+		))
+	}
+</ol>

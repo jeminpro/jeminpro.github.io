@@ -3,6 +3,7 @@ import { render } from 'astro:content';
 import { getPublishedSnippets } from '../../utils/helper';
 import Layout from '../../layouts/BaseLayout.astro';
 import ContentTitle from '../../components/Content/ContentTitle.astro';
+import TableOfContents from '../../components/Content/TableOfContents.astro';
 import BreadCrumbs from '../../components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
@@ -15,14 +16,18 @@ export async function getStaticPaths() {
 
 const snippet = Astro.props;
 const { title, category, description, publishedDate, updatedDate } = snippet.data;
-const { Content } = await render(snippet);
+const { Content, headings } = await render(snippet);
 ---
 
 <Layout title={title} description={description}>
-	<article class="content">
-		<BreadCrumbs></BreadCrumbs>
-		<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
-		<p>{description}</p>
-		<Content />
-	</article>
+	<div class="post-layout">
+		<article class="content">
+			<BreadCrumbs></BreadCrumbs>
+			<ContentTitle title={title} publishedDate={publishedDate} updatedDate={updatedDate} category={category} />
+			<p>{description}</p>
+			<TableOfContents headings={headings} />
+			<Content />
+		</article>
+		<TableOfContents headings={headings} variant="side" />
+	</div>
 </Layout>
