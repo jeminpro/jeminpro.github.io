@@ -5,56 +5,39 @@ import Layout from "../layouts/BaseLayout.astro";
 
 <Layout title="Contact" isMainLarge={false}>
 	<div class="contact-page">
-		<h2>Hey, hi, and hello!</h2>
-		
-		<p>I love hearing from readers! You can use this form to reach out to me with any questions, comments, or concerns.</p>
+		<h1 class="contact-title fade-up">Hey, hi, and hello!</h1>
 
-		<iframe data-tally-src="https://tally.so/embed/ja5GBQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" loading="lazy" width="100%" height="342" frameborder="0" marginheight="0" marginwidth="0" title="Send a message"></iframe>
-		
+		<p class="contact-lead fade-up fade-up-delay-1">I love hearing from readers! You can use this form to reach out to me with any questions, comments, or concerns.</p>
+
+		<div class="contact-form-panel fade-up fade-up-delay-2">
+			<iframe data-tally-src="https://tally.so/embed/ja5GBQ?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&formEventsForwarding=1" loading="lazy" width="100%" height="342" frameborder="0" marginheight="0" marginwidth="0" title="Send a message"></iframe>
+		</div>
 	</div>
 </Layout>
 
 <style>
-	.intro {
-		background: #ece7e7;
-		padding: 2rem;
+	.contact-page {
+		padding-top: 1.5rem;
+	}
+
+	.contact-title {
 		margin-top: 1rem;
-		border-radius: 10px;
-
 	}
 
-	.intro h1 {
-		margin: 0 0 1rem;
+	.contact-lead {
+		max-width: 36rem;
+		color: var(--text-muted);
+		font-size: 1.05rem;
 	}
 
-	.title-introduction {
-		margin-bottom: 2rem;
-	}
-
-	.load-more {
-		text-align: center;
-		padding: 1em 0;
-	}
-
-	a.load-more__link {
-		letter-spacing: 1px;
-		background-position: center 72%;
-		text-transform: uppercase;
-		font-size: 0.75em;
-		color: inherit;
-		background: 0 0;
-		text-shadow: none;
-		border-bottom: 5px solid #d33a2c;
-		letter-spacing: 1px;
-		transition: all 0.1s ease-out;
-		display: inline-block;
-		cursor: pointer;
-		text-decoration: none;
-	}
-
-	a.load-more__link:focus,
-	a.load-more__link:hover {
-		color: #d33a2c;
+	.contact-form-panel {
+		margin-top: 1.5rem;
+		padding: 1.5rem;
+		/* Kept light in both themes because the embedded Tally form uses dark text */
+		background: #fdfcfb;
+		border: 1px solid var(--border);
+		border-radius: var(--radius-lg);
+		box-shadow: var(--shadow-sm);
 	}
 </style>
 

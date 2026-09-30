@@ -1,39 +1,64 @@
 ---
+import Layout from "../layouts/BaseLayout.astro";
 import { Icon } from 'astro-icon/components'
-
 ---
 
-
-<section>
-    <h1>Not Found</h1>
-    <p>Sorry, there is nothing at this URL.</p>
-    <a href="/"><Icon name="fa6-solid:arrow-rotate-left" /> Go back home</a>
-</section>
+<Layout title="Page not found">
+    <section class="not-found">
+        <p class="code fade-up">404</p>
+        <h1 class="fade-up fade-up-delay-1">Page not found</h1>
+        <p class="message fade-up fade-up-delay-2">Sorry, there is nothing at this URL.</p>
+        <a class="home-link fade-up fade-up-delay-3" href="/"><Icon name="fa6-solid:arrow-rotate-left" /> Go back home</a>
+    </section>
+</Layout>
 
 <style>
-    body {
-        background-color: #000;
-        color: #fff;
+    .not-found {
+        padding: 14vh 0 8vh;
         text-align: center;
     }
 
-    section{
-        padding-top: 18vh;
-
+    .code {
+        margin: 0;
+        font-family: var(--font-display);
+        font-size: clamp(5rem, 4rem + 8vw, 9rem);
+        font-weight: 800;
+        line-height: 1;
+        letter-spacing: -0.04em;
+        background: linear-gradient(100deg, var(--brand) 20%, var(--brand-hover) 80%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: var(--brand);
     }
 
     h1 {
-        font-size: 8rem;
+        margin: 0.5rem 0 0;
     }
 
-    p {
-        font-size: 3rem;
+    .message {
+        color: var(--text-muted);
+        font-size: 1.15rem;
+        margin: 0.75rem 0 2rem;
     }
 
-    a {
-        color: #e6b3ff;
+    .home-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.6rem 1.35rem;
+        border: 1px solid var(--border-strong);
+        border-radius: var(--radius-full);
+        color: var(--text);
+        font-family: var(--font-display);
+        font-weight: 600;
         text-decoration: none;
-        font-size: 2rem;
+        transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+    }
 
+    .home-link:hover {
+        border-color: var(--brand);
+        color: var(--brand);
+        background: var(--brand-subtle);
     }
 </style>

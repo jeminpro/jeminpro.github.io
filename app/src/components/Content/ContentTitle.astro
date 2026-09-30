@@ -19,7 +19,7 @@ const { title, publishedDate, updatedDate, category } = Astro.props;
 
 		{updatedDate && (<span class="info-item" title="Updated on"><Icon name="fa6-solid:calendar-plus" /><FormattedDate date={updatedDate} /></span>)}
 
-		<span class="info-item" title="Category"><Icon name="fa6-solid:tag" />{category}</span>
+		<span class="info-item info-category" title="Category"><Icon name="fa6-solid:tag" />{category}</span>
 	</div>
 	
 

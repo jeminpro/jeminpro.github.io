@@ -4,6 +4,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import { getPublishedArticles } from "../utils/helper";
 import ArticleItem from "../components/Article/ArticleItem.astro";
+import SocialLinks from "../components/Nav/SocialLinks.astro";
 
 const articles = (await getPublishedArticles())
 	.sort(
@@ -15,21 +16,31 @@ const articles = (await getPublishedArticles())
 
 <BaseLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
 	<div class="landing-page">
-		<section class="intro">
-			<h1>Hello, my name is Jemin</h1>
-			<p>
-				I am a full stack developer and I have been building
-				applications with .NET for over a decade, but lately, I've been
-				diving deep into the AI rabbit hole. I created this blog so I
-				can share the things I learn in the hope of both helping others
-				and deepening my knowledge of the topics I write about.
-				Welcome to my spot on the web for articles, code
-				snippet, and anything else I want to put out here.
+		<section class="hero">
+			<div class="hero-glow" aria-hidden="true"></div>
+			<p class="hero-kicker fade-up">Full stack developer &middot; .NET &middot; AI</p>
+			<h1 class="hero-title fade-up fade-up-delay-1">
+				Hello, I'm <span class="hero-name">Jemin</span>
+			</h1>
+			<p class="hero-bio fade-up fade-up-delay-2">
+				I've been building applications with .NET for over a decade, and
+				lately I've been diving deep into the AI rabbit hole. This is my
+				spot on the web for articles, code snippets, and anything else I
+				learn along the way &mdash; shared in the hope of helping others and
+				deepening my own understanding.
 			</p>
+			<div class="hero-actions fade-up fade-up-delay-3">
+				<a class="button button-primary" href="/articles">Read articles</a>
+				<a class="button button-ghost" href="/contact">Get in touch</a>
+				<SocialLinks className="hero-socials" />
+			</div>
 		</section>
 
-		<section>
-			<h1>Latest articles</h1>
+		<section class="latest">
+			<div class="section-heading">
+				<h2>Latest articles</h2>
+				<a class="see-all" href="/articles">All articles <span aria-hidden="true">&rarr;</span></a>
+			</div>
 			{
 				articles.map((article) => (
 					<ArticleItem
@@ -37,55 +48,155 @@ const articles = (await getPublishedArticles())
 					/>
 				))
 			}
-
-			<div class="load-more">
-				<a class="load-more__link" data-instant="" href="/articles"
-					>See All Articles</a>
-			</div>
 		</section>
 	</div>
 </BaseLayout>
 
 <style>
-	.intro {
-		background: #ece7e7;
-		padding: 2rem;
-		margin-top: 1rem;
-		border-radius: 10px;
-
+	.hero {
+		position: relative;
+		padding: 3.5rem 0 2.5rem;
 	}
 
-	.intro h1 {
-		margin: 0 0 1rem;
+	.hero-glow {
+		position: absolute;
+		top: -6rem;
+		left: 50%;
+		transform: translateX(-50%);
+		width: min(48rem, 100vw);
+		height: 22rem;
+		background: radial-gradient(ellipse at center, var(--brand-glow), transparent 65%);
+		opacity: 0.55;
+		pointer-events: none;
+		z-index: -1;
 	}
 
-	.title-introduction {
-		margin-bottom: 2rem;
-	}
-
-	.load-more {
-		text-align: center;
-		padding: 1em 0;
-	}
-
-	a.load-more__link {
-		letter-spacing: 1px;
-		background-position: center 72%;
+	.hero-kicker {
+		margin: 0 0 0.75rem;
+		color: var(--brand);
+		font-family: var(--font-display);
+		font-size: 0.85rem;
+		font-weight: 600;
+		letter-spacing: 0.12em;
 		text-transform: uppercase;
-		font-size: 0.75em;
-		color: inherit;
-		background: 0 0;
-		text-shadow: none;
-		border-bottom: 5px solid #d33a2c;
-		letter-spacing: 1px;
-		transition: all 0.1s ease-out;
-		display: inline-block;
-		cursor: pointer;
+	}
+
+	.hero-title {
+		margin: 0;
+		font-size: clamp(2.4rem, 1.8rem + 3vw, 3.6rem);
+		line-height: 1.1;
+		letter-spacing: -0.03em;
+	}
+
+	.hero-name {
+		background: linear-gradient(100deg, var(--brand) 20%, var(--brand-hover) 80%);
+		-webkit-background-clip: text;
+		background-clip: text;
+		-webkit-text-fill-color: transparent;
+		color: var(--brand);
+	}
+
+	.hero-bio {
+		max-width: 38rem;
+		margin: 1.25rem 0 0;
+		color: var(--text-muted);
+		font-size: 1.1rem;
+		line-height: 1.75;
+	}
+
+	.hero-actions {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		gap: 0.75rem;
+		margin-top: 1.75rem;
+	}
+
+	.button {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		padding: 0.6rem 1.35rem;
+		border-radius: var(--radius-full);
+		font-family: var(--font-display);
+		font-weight: 600;
+		font-size: 0.95rem;
+		text-decoration: none;
+		transition: background var(--transition-fast), color var(--transition-fast), border-color var(--transition-fast), box-shadow var(--transition-med);
+	}
+
+	.button-primary {
+		background: var(--brand);
+		border: 1px solid var(--brand);
+		color: var(--brand-contrast);
+		box-shadow: 0 4px 14px -4px var(--brand-glow);
+	}
+
+	.button-primary:hover {
+		background: var(--brand-hover);
+		border-color: var(--brand-hover);
+		color: var(--brand-contrast);
+		box-shadow: 0 8px 22px -6px var(--brand-glow);
+	}
+
+	.button-ghost {
+		background: transparent;
+		border: 1px solid var(--border-strong);
+		color: var(--text);
+	}
+
+	.button-ghost:hover {
+		border-color: var(--brand);
+		color: var(--brand);
+		background: var(--brand-subtle);
+	}
+
+	:global(.hero-socials) {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+		margin-left: 0.5rem;
+	}
+
+	:global(.hero-socials [data-icon]) {
+		font-size: 1.35rem;
+	}
+
+	.latest {
+		margin-top: 1.5rem;
+	}
+
+	.section-heading {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 1rem;
+		margin-bottom: 0.5rem;
+	}
+
+	.section-heading h2 {
+		margin: 1rem 0 0.5rem;
+	}
+
+	.see-all {
+		flex: none;
+		color: var(--text-muted);
+		font-family: var(--font-display);
+		font-weight: 500;
+		font-size: 0.95rem;
 		text-decoration: none;
 	}
 
-	a.load-more__link:focus,
-	a.load-more__link:hover {
-		color: #d33a2c;
+	.see-all:hover {
+		color: var(--brand);
+	}
+
+	.see-all span {
+		display: inline-block;
+		transition: transform var(--transition-med);
+	}
+
+	.see-all:hover span {
+		transform: translateX(3px);
 	}
 </style>

@@ -4,39 +4,44 @@ import SocialLinks from "./Nav/SocialLinks.astro";
 
 <footer>
 	<SocialLinks className="social-footer" />
-	<!-- &copy; {today.getFullYear()} JeminPro All rights reserved. -->
 	<div class="typing-container">Designed by Jemin the <span typing-speed="70" typing-delay="1000" data-words="Front-end developer,Back-end developer,Full stack developer"></span></div>
 </footer>
 <style>
 	footer {
-		padding: 1rem;
-		background: linear-gradient(var(--gray-gradient)) no-repeat;
-		color: rgb(var(--gray));
+		padding: 2rem 1rem 2.25rem;
+		border-top: 1px solid var(--border);
+		background: var(--bg-subtle);
+		color: var(--text-muted);
 		text-align: center;
-        margin-top: auto;
-        user-select: none;
+		margin-top: auto;
+		user-select: none;
 	}
-	
-	
-.typing-container {
-  font-size:1.5rem;
-  font-weight: 400;
-}
-.typing-container span{
-    color: red; 
-}
-.typing-container span::after{
-    content: '|';
-    animation-name: blinking; 
-    animation-duration: .71s; 
-    animation-iteration-count: infinite;
-}
-@keyframes blinking{
-    from{
-        color: transparent; 
-    }
-    to{
-        color: lightgrey; 
-    }
-}
+
+	.typing-container {
+		font-size: 1.05rem;
+		font-weight: 400;
+		font-family: var(--font-display);
+	}
+
+	.typing-container span {
+		color: var(--brand);
+		font-weight: 600;
+	}
+
+	.typing-container span::after {
+		content: '|';
+		animation-name: blinking;
+		animation-duration: .71s;
+		animation-iteration-count: infinite;
+	}
+
+	@keyframes blinking {
+		from {
+			color: transparent;
+		}
+
+		to {
+			color: var(--text-faint);
+		}
+	}
 </style>

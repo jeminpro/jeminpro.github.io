@@ -11,7 +11,9 @@ export default defineConfig({
   site: 'https://jeminpro.com',
   integrations: [
   expressiveCode({
-    themes: ['dark-plus'], 
+    themes: ['dark-plus', 'github-light'],
+    themeCssSelector: (theme) => `[data-theme="${theme.type}"]`,
+    useDarkModeMediaQuery: false,
     plugins: [pluginLineNumbers()],
     defaultProps: {
       showLineNumbers: false    }

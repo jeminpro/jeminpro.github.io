@@ -20,33 +20,29 @@ const {className} = Astro.props;
 <style>
 	a {
 		text-decoration: none;
-		color: #fff;
+		color: var(--text-muted);
+		transition: color var(--transition-fast);
+	}
+
+	a:hover,
+	a:focus-visible {
+		color: var(--brand);
 	}
 
 	[data-icon] {
-		font-size: 2rem;
+		font-size: 1.6rem;
 	}
 
 	.social-mobile {
 		display: flex;
-		gap: 1rem;
-		padding: 1.5rem;
+		gap: 1.25rem;
+		padding: 1.25rem 1.5rem;
 	}
 
 	.social-footer {
 		display: flex;
 		justify-content: center;
-		gap: 1.25rem;
+		gap: 1.5rem;
 		padding: 0.15rem 0 0.85rem;
 	}
-
-	.social-footer a {
-		color: var(--gray-dark);
-	}
-
-	.social-footer a:hover,
-	.social-footer a:focus-visible {
-		color: var(--accent);
-	}
-
 </style>

@@ -1,5 +1,6 @@
 ---
 import type { Article } from '../../content.config';
+import FormattedDate from '../Content/FormattedDate.astro';
 
 // Define props with the Article type
 interface Props {
@@ -11,10 +12,29 @@ const { article } = Astro.props;
 
 <article class="card">
 	<h3 class="title"><a href={`/articles/${article.slug}`}>{article.title}</a></h3>
-	
+
 	<p>{article.description}</p>
 	<footer>
-		<a class="read-more" href={`/articles/${article.slug}`}>READ MORE</a>
-		<small class="category">{article.category}</small>
+		<a class="read-more" href={`/articles/${article.slug}`}>Read more</a>
+		<span class="card-meta">
+			{article.publishedDate && (
+				<small class="card-date"><FormattedDate date={article.publishedDate} /></small>
+			)}
+			<small class="category">{article.category}</small>
+		</span>
 	</footer>
 </article>
+
+<style>
+	.card-meta {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.card-date {
+		color: var(--text-faint);
+		font-size: 0.82rem;
+		white-space: nowrap;
+	}
+</style>
