@@ -577,17 +577,40 @@ small{
 		outline-offset: 2px;
 	}
 
-	.content dialog {
-		width: min(40rem, calc(100vw - 2rem));
-		max-height: min(80vh, 40rem);
-		margin: auto;
+	html:has(.content dialog[open]) {
+		overflow: hidden;
+	}
+
+	.content dialog:not([open]) {
+		display: none;
+	}
+
+	.content dialog[open] {
+		display: grid;
+		align-items: safe center;
+		justify-items: center;
+		width: 100%;
+		max-width: none;
+		height: 100%;
+		max-height: none;
+		margin: 0;
+		padding: 1.25rem;
+		border: 0;
+		border-radius: 0;
+		background: transparent;
+		color: var(--gray-dark);
+		box-shadow: none;
+		overflow: auto;
+		overscroll-behavior: contain;
+	}
+
+	.content dialog .md-modal-panel {
+		width: min(64rem, 100%);
 		padding: 0.85rem 1.25rem 1.15rem;
 		border: 1px solid #dad9d9;
 		border-radius: 8px;
 		background: #fff;
-		color: var(--gray-dark);
 		box-shadow: rgba(0, 0, 0, 0.18) 0 12px 40px -8px;
-		overflow: auto;
 	}
 
 	.content dialog::backdrop {
@@ -639,7 +662,7 @@ small{
 		display: block;
 		width: auto;
 		max-width: 100%;
-		max-height: 22rem;
+		max-height: min(52vh, 36rem);
 		margin: 0.65rem auto 0.35rem;
 		background: #f3f4f6;
 		object-fit: contain;

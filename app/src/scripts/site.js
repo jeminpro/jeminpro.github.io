@@ -104,7 +104,7 @@ export default function site() {
         dialog.id = `md-modal-${index + 1}`;
       }
 
-      if (!dialog.querySelector(":scope > .md-modal-close")) {
+      if (!dialog.querySelector(":scope > .md-modal-close") && !dialog.querySelector(".md-modal-close")) {
         const close = document.createElement("button");
         close.type = "button";
         close.className = "md-modal-close";
@@ -113,6 +113,13 @@ export default function site() {
         close.setAttribute("aria-label", "Close");
         close.textContent = "×";
         dialog.prepend(close);
+      }
+
+      if (!dialog.querySelector(":scope > .md-modal-panel")) {
+        const panel = document.createElement("div");
+        panel.className = "md-modal-panel";
+        while (dialog.firstChild) panel.append(dialog.firstChild);
+        dialog.append(panel);
       }
 
       dialog.addEventListener("click", (event) => {
@@ -165,13 +172,14 @@ export default function site() {
         const appUrl = videoId
           ? `youtube://www.youtube.com/watch?v=${encodeURIComponent(videoId)}`
           : `youtube://www.youtube.com/results?search_query=${encodeURIComponent(search || "")}`;
-        const started = Date.now();
-        window.location.href = appUrl;
-        window.setTimeout(() => {
-          if (!document.hidden && Date.now() - started < 2000) {
-            window.location.href = web;
-          }
-        }, 900);
+        const opener = document.createElement("a");
+        opener.href = appUrl;
+        opener.target = "_blank";
+        opener.rel = "noopener noreferrer";
+        opener.hidden = true;
+        document.body.append(opener);
+        opener.click();
+        opener.remove();
       });
     });
   }
