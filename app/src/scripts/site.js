@@ -10,6 +10,9 @@ export default function site() {
     hookEvents();
     footerTyping();
     externalLiksNewTab();
+    setupModals();
+    setupTaskLists();
+    setupSearch();
   }
 
   const hookEvents = () => {
@@ -88,6 +91,200 @@ export default function site() {
     }
 
     type();
+  }
+
+  const setupModals = () => {
+    const supportsInvoker = "commandForElement" in HTMLButtonElement.prototype;
+    const dialogs = document.querySelectorAll(".content dialog");
+
+    dialogs.forEach((dialog, index) => {
+      if (!dialog.id) {
+        dialog.id = `md-modal-${index + 1}`;
+      }
+
+      if (!dialog.querySelector(":scope > .md-modal-close")) {
+        const close = document.createElement("button");
+        close.type = "button";
+        close.className = "md-modal-close";
+        close.setAttribute("commandfor", dialog.id);
+        close.setAttribute("command", "close");
+        close.setAttribute("aria-label", "Close");
+        close.textContent = "×";
+        dialog.prepend(close);
+      }
+
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+
+    if (supportsInvoker) return;
+
+    document.querySelectorAll(".content button[commandfor]").forEach((button) => {
+      button.addEventListener("click", () => {
+        const target = document.getElementById(button.getAttribute("commandfor"));
+        if (!(target instanceof HTMLDialogElement)) return;
+
+        const command = button.getAttribute("command");
+        if (command === "show-modal" && !target.open) target.showModal();
+        if (command === "close") target.close();
+      });
+    });
+  }
+
+  const setupTaskLists = () => {
+    document.querySelectorAll(".content .task-list-item input[type='checkbox']").forEach((box) => {
+      box.disabled = false;
+    });
+  }
+
+  const setupSearch = () => {
+    const root = document.querySelector("[data-site-search]");
+    const openButton = document.querySelector("[data-search-open]");
+    if (!root || !openButton) return;
+
+    const input = root.querySelector("input");
+    const results = root.querySelector("[data-search-results]");
+    const hint = root.querySelector("[data-search-hint]");
+    const closeButton = root.querySelector("[data-search-close]");
+
+    let indexPromise = null;
+
+    const loadIndex = () => {
+      if (!indexPromise) {
+        indexPromise = fetch("/search-index.json").then((response) => {
+          if (!response.ok) throw new Error("Search index failed");
+          return response.json();
+        });
+      }
+      return indexPromise;
+    };
+
+    const hideResults = () => {
+      root.dataset.searchToken = String(Number(root.dataset.searchToken || 0) + 1);
+      results.hidden = true;
+      results.replaceChildren();
+      hint.hidden = false;
+    };
+
+    const renderResults = (results, matches) => {
+      results.replaceChildren();
+
+      if (!matches.length) {
+        const empty = document.createElement("p");
+        empty.className = "search-empty";
+        empty.textContent = "No matches";
+        results.append(empty);
+        hint.hidden = true;
+        results.hidden = false;
+        return;
+      }
+
+      matches.forEach((match) => {
+        const group = document.createElement("div");
+        group.className = "search-group";
+
+        const type = document.createElement("span");
+        type.className = "search-type";
+        type.textContent = match.item.type === "article" ? "Article" : "Snippet";
+        group.append(type);
+
+        if (match.titleMatch) {
+          const titleLink = document.createElement("a");
+          titleLink.href = match.item.url;
+          titleLink.textContent = match.item.title;
+          group.append(titleLink);
+        } else {
+          const title = document.createElement("span");
+          title.className = "search-page";
+          title.textContent = match.item.title;
+          group.append(title);
+        }
+
+        if (match.headingMatches.length) {
+          const list = document.createElement("ul");
+          list.className = "search-headings";
+          match.headingMatches.forEach((heading) => {
+            const item = document.createElement("li");
+            const link = document.createElement("a");
+            link.href = `${match.item.url}#${heading.slug}`;
+            link.textContent = heading.text;
+            item.append(link);
+            list.append(item);
+          });
+          group.append(list);
+        }
+
+        results.append(group);
+      });
+
+      hint.hidden = true;
+      results.hidden = false;
+    };
+
+    const search = async () => {
+      const query = input.value.trim().toLowerCase();
+      const token = String(Number(root.dataset.searchToken || 0) + 1);
+      root.dataset.searchToken = token;
+      if (!query) {
+        hideResults();
+        return;
+      }
+
+      let index;
+      try {
+        index = await loadIndex();
+      } catch {
+        if (root.dataset.searchToken !== token) return;
+        results.replaceChildren();
+        const empty = document.createElement("p");
+        empty.className = "search-empty";
+        empty.textContent = "Search is unavailable";
+        results.append(empty);
+        hint.hidden = true;
+        results.hidden = false;
+        return;
+      }
+
+      if (root.dataset.searchToken !== token) return;
+      if (input.value.trim().toLowerCase() !== query) return;
+
+      const matches = index.flatMap((item) => {
+        const titleMatch = item.title.toLowerCase().includes(query);
+        const headingMatches = item.headings.filter((heading) =>
+          heading.text.toLowerCase().includes(query)
+        );
+        if (!titleMatch && !headingMatches.length) return [];
+        return [{ item, titleMatch, headingMatches }];
+      });
+
+      renderResults(results, matches);
+    };
+
+    const openSearch = () => {
+      root.hidden = false;
+      openButton.setAttribute("aria-expanded", "true");
+      document.body.classList.add("search-locked");
+      input.focus();
+    };
+
+    const closeSearch = () => {
+      hideResults();
+      input.value = "";
+      root.hidden = true;
+      openButton.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("search-locked");
+      openButton.focus();
+    };
+
+    openButton.addEventListener("click", openSearch);
+    closeButton.addEventListener("click", closeSearch);
+    input.addEventListener("input", search);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key !== "Escape" || root.hidden) return;
+      closeSearch();
+    });
   }
 
   const externalLiksNewTab = () => {
