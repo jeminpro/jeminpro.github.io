@@ -1068,6 +1068,20 @@ a.exercise-yt:focus-visible {
 		margin-top: 2.75rem;
 		overflow: auto;
 		scrollbar-width: thin;
+		scrollbar-color: var(--border-strong) transparent;
+	}
+
+	.toc-side::-webkit-scrollbar {
+		width: 3px;
+	}
+
+	.toc-side::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.toc-side::-webkit-scrollbar-thumb {
+		background: var(--border-strong);
+		border-radius: 999px;
 	}
 }
 
