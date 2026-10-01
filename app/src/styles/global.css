@@ -626,43 +626,6 @@ a.card p {
 	margin: 1rem 0;
 }
 
-/* Position the copy control on the code frame even when the Expressive Code
-   stylesheet is missing from the GitHub Pages deploy. */
-.expressive-code .frame {
-	position: relative;
-}
-
-.expressive-code .copy {
-	display: flex;
-	position: absolute;
-	z-index: 2;
-	inset-block-start: 0.55rem;
-	inset-inline-end: 0.55rem;
-}
-
-.expressive-code .copy button {
-	position: relative;
-	width: 2rem;
-	height: 2rem;
-	margin: 0;
-	padding: 0;
-	border: 1px solid var(--border-strong);
-	border-radius: 0.2rem;
-	background: var(--bg-elevated);
-	color: var(--text);
-	cursor: pointer;
-}
-
-.expressive-code .copy button::after {
-	content: "";
-	position: absolute;
-	inset: 0.4rem;
-	background: currentColor;
-	pointer-events: none;
-	-webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z'/%3E%3C/svg%3E") center / contain no-repeat;
-	mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M16 1H4a2 2 0 0 0-2 2v14h2V3h12V1zm3 4H8a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2zm0 16H8V7h11v14z'/%3E%3C/svg%3E") center / contain no-repeat;
-}
-
 a img:hover,
 a svg:hover {
 	transform: scale(1.1);
