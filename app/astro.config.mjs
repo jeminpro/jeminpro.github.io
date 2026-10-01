@@ -14,6 +14,9 @@ export default defineConfig({
     themes: ['dark-plus', 'github-light'],
     themeCssSelector: (theme) => `[data-theme="${theme.type}"]`,
     useDarkModeMediaQuery: false,
+    // Inline code-block CSS. The deployed /_astro/ec.*.css file 404s, so the
+    // copy button falls back to normal flow under the code block.
+    emitExternalStylesheet: false,
     plugins: [pluginLineNumbers()],
     defaultProps: {
       showLineNumbers: false    }
