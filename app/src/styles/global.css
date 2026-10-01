@@ -61,27 +61,27 @@
 [data-theme="dark"] {
 	--brand: #e87a6c;
 	--brand-hover: #f09385;
-	--brand-subtle: rgba(232, 122, 108, 0.13);
-	--brand-glow: rgba(232, 122, 108, 0.25);
+	--brand-subtle: rgba(232, 122, 108, 0.16);
+	--brand-glow: rgba(232, 122, 108, 0.48);
 	--brand-contrast: #1b0e0c;
 
-	--bg: #101216;
-	--bg-elevated: #181b21;
-	--bg-subtle: #1f232b;
-	--bg-inset: #262b34;
+	--bg: #100e0d;
+	--bg-elevated: rgba(36, 28, 25, 0.78);
+	--bg-subtle: #1c1715;
+	--bg-inset: #261f1c;
 
 	--text: #e8eaed;
 	--text-muted: #a2abb6;
 	--text-faint: #6f7883;
 
-	--border: #2b303a;
-	--border-strong: #3d444f;
-	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.3);
-	--shadow-md: 0 4px 16px -4px rgba(0, 0, 0, 0.45);
-	--shadow-lg: 0 16px 40px -12px rgba(0, 0, 0, 0.6);
+	--border: #3a322e;
+	--border-strong: #524842;
+	--shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+	--shadow-md: 0 8px 24px -8px rgba(0, 0, 0, 0.55);
+	--shadow-lg: 0 16px 40px -12px rgba(0, 0, 0, 0.65);
 
-	--header-bg: rgba(16, 18, 22, 0.82);
-	--header-border: rgba(255, 255, 255, 0.08);
+	--header-bg: #161311;
+	--header-border: rgba(232, 122, 108, 0.4);
 
 	color-scheme: dark;
 }
@@ -457,6 +457,23 @@ small {
 	box-shadow: var(--shadow-md);
 }
 
+[data-theme="dark"] .card {
+	background:
+		linear-gradient(180deg, rgba(255, 244, 236, 0.07), transparent 32%),
+		var(--bg-elevated);
+	border-color: rgba(255, 236, 220, 0.1);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 236, 220, 0.16),
+		var(--shadow-sm);
+}
+
+[data-theme="dark"] .card:hover {
+	border-color: rgba(232, 122, 108, 0.55);
+	box-shadow:
+		inset 0 1px 0 rgba(255, 236, 220, 0.2),
+		0 12px 32px -12px rgba(232, 122, 108, 0.45);
+}
+
 a.card {
 	text-decoration: none;
 	color: inherit;
@@ -792,6 +809,10 @@ html:has(.content dialog[open]) {
 	border-radius: var(--radius-md);
 	background: var(--bg-elevated);
 	box-shadow: var(--shadow-lg);
+}
+
+[data-theme="dark"] .content dialog .md-modal-panel {
+	background: #241c19;
 }
 
 .content dialog::backdrop {

@@ -17,6 +17,11 @@ import SocialLinks from "./Nav/SocialLinks.astro";
 		user-select: none;
 	}
 
+	:global([data-theme="dark"]) footer {
+		background: linear-gradient(180deg, transparent, rgba(232, 122, 108, 0.06));
+		border-top-color: rgba(232, 122, 108, 0.28);
+	}
+
 	.typing-container {
 		font-size: 1.05rem;
 		font-weight: 400;

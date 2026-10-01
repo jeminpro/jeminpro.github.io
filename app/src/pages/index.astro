@@ -48,6 +48,11 @@ const articles = (await getPublishedArticles())
 					/>
 				))
 			}
+			<p class="more-articles">
+				<a class="button button-ghost" href="/articles">
+					More articles <span aria-hidden="true">&rarr;</span>
+				</a>
+			</p>
 		</section>
 	</div>
 </BaseLayout>
@@ -94,6 +99,10 @@ const articles = (await getPublishedArticles())
 		background-clip: text;
 		-webkit-text-fill-color: transparent;
 		color: var(--brand);
+	}
+
+	:global([data-theme="dark"]) .hero-glow {
+		display: none;
 	}
 
 	.hero-bio {
@@ -197,6 +206,20 @@ const articles = (await getPublishedArticles())
 	}
 
 	.see-all:hover span {
+		transform: translateX(3px);
+	}
+
+	.more-articles {
+		margin: 1.5rem 0 0;
+		text-align: center;
+	}
+
+	.more-articles .button span {
+		display: inline-block;
+		transition: transform var(--transition-med);
+	}
+
+	.more-articles .button:hover span {
 		transform: translateX(3px);
 	}
 </style>
