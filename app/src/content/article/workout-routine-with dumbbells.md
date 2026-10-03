@@ -12,25 +12,24 @@ category: Workout
 
 ### Workout A
 - [ ] <button type="button" command="show-modal" commandfor="modal-goblet-squat">Goblet Squat</button> 3 × 10
-- [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-chest-press">Dumbbell Chest Press</button> 3 × 10
-- [ ] <button type="button" command="show-modal" commandfor="modal-one-arm-dumbbell-row">One-Arm Dumbbell Row</button> 3 × 10 each side
-- [ ] <button type="button" command="show-modal" commandfor="modal-romanian-deadlift">Romanian Deadlift</button> 3 × 10
-- [ ] <button type="button" command="show-modal" commandfor="modal-lateral-raise">Lateral Raise</button> 2 × 10
 - [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-curl">Dumbbell Curl</button> 2 × 10
+- [ ] <button type="button" command="show-modal" commandfor="modal-lateral-raise">Lateral Raise</button> 2 × 10
+- [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-chest-press">Dumbbell Chest Press</button> 3 × 10
+- [ ] <button type="button" command="show-modal" commandfor="modal-one-arm-dumbbell-row">One-Arm Dumbbell Row</button> 3 × 10 each
+- [ ] <button type="button" command="show-modal" commandfor="modal-romanian-deadlift">Romanian Deadlift</button> 3 × 10
 
 ### Workout B
 
-- [ ] <button type="button" command="show-modal" commandfor="modal-bulgarian-split-squat">Bulgarian Split Squat</button> 3 × 10 each leg
+- [ ] <button type="button" command="show-modal" commandfor="modal-bulgarian-split-squat">Bulgarian Split Squat</button> 3 × 10 each
+- [ ] <button type="button" command="show-modal" commandfor="modal-overhead-triceps-extension">Overhead Triceps Extension</button> 2 × 10
 - [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-shoulder-press">Dumbbell Shoulder Press</button> 3 × 10
+- [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-chest-press">Dumbbell Chest Press</button> 3 × 10
 - [ ] <button type="button" command="show-modal" commandfor="modal-one-arm-dumbbell-row">One-Arm Dumbbell Row</button> 3 × 10
 - [ ] <button type="button" command="show-modal" commandfor="modal-romanian-deadlift">Romanian Deadlift</button> 3 × 10
-- [ ] <button type="button" command="show-modal" commandfor="modal-dumbbell-chest-press">Dumbbell Chest Press</button> 3 × 10
-- [ ] <button type="button" command="show-modal" commandfor="modal-overhead-triceps-extension">Overhead Triceps Extension</button> 2 × 10
 
 <a class="exercise-yt" href="https://www.youtube.com/watch?v=FdUFhUuJl1E">Cool Down 1</a>
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=McIrh35QRM8w&t=23">Cool Down 2</a>
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=R56k41NLIoI">Cool Down 3</a>
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=NUIMZ4IcBy8">Cool Down 4</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=R56k41NLIoI">Cool Down 2</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=NUIMZ4IcBy8">Cool Down 3</a>
 
 Train 3 days a week, with at least one rest day in between sessions.
 
@@ -137,7 +136,9 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/goblet-squat.gif" alt="Goblet squat with one dumbbell held at the chest" width="1080" height="1080">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=9KzZD_n2r64">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=lRYBbchqxtI">Watch 1</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=eLX_dyvooKQ">Watch 2</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=9KzZD_n2r64">Watch 3</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+goblet+squat">Search on YouTube</a>
 </div>
 
@@ -156,7 +157,9 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/dumbbell-chest-press.gif" alt="Dumbbell chest press on a bench" width="1000" height="1000">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=5cy8pPT0bs0">Watch on YouTube</a>
+
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=5cy8pPT0bs0">Watch 1</a>
+
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bench+press">Search on YouTube</a>
 </div>
 
@@ -175,7 +178,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/one-arm-dumbbell-row.gif" alt="One-arm dumbbell row supported on a bench" width="768" height="768">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=epSR-ma7BsY">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=epSR-ma7BsY">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=one+arm+dumbbell+row">Search on YouTube</a>
 </div>
 
@@ -194,7 +197,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/romanian-deadlift.gif" alt="Dumbbell Romanian deadlift" width="460" height="460">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=RApyTtH6qAo">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=RApyTtH6qAo">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift">Search on YouTube</a>
 </div>
 
@@ -213,7 +216,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/lateral-raise.gif" alt="Standing dumbbell lateral raise" width="1080" height="1080">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=q9LhHrHShs4">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=q9LhHrHShs4">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+lateral+raise">Search on YouTube</a>
 </div>
 
@@ -232,7 +235,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/dumbbell-curl.gif" alt="Standing dumbbell curl" width="1040" height="690">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=F1B4WK_6oH0">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=F1B4WK_6oH0">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bicep+curl">Search on YouTube</a>
 </div>
 
@@ -251,7 +254,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/bulgarian-split-squat.gif" alt="Dumbbell Bulgarian split squat" width="1080" height="1080">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=4Qnfw1FqWxQ">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=4Qnfw1FqWxQ">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+bulgarian+split+squat">Search on YouTube</a>
 </div>
 
@@ -270,7 +273,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/dumbbell-shoulder-press.gif" alt="Standing dumbbell shoulder press" width="1080" height="1080">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=qEwKCR5JCog">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=qEwKCR5JCog">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+shoulder+press">Search on YouTube</a>
 </div>
 
@@ -289,7 +292,7 @@ So the system is simply:
 <img class="exercise-gif" src="/images/workout/overhead-triceps-extension.gif" alt="Standing overhead dumbbell triceps extension" width="480" height="270">
 
 <div class="exercise-actions">
-<a class="exercise-yt" href="https://www.youtube.com/watch?v=fMOd6RmMlWk">Watch on YouTube</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=fMOd6RmMlWk">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=overhead+dumbbell+triceps+extension">Search on YouTube</a>
 </div>
 
