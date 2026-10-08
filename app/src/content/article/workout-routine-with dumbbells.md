@@ -139,6 +139,7 @@ So the system is simply:
 <a class="exercise-yt" href="https://www.youtube.com/watch?v=lRYBbchqxtI">Watch 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/watch?v=eLX_dyvooKQ">Watch 2</a>
 <a class="exercise-yt" href="https://www.youtube.com/watch?v=9KzZD_n2r64">Watch 3</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=Mu7aVOjEBdA">Technique 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+goblet+squat">Search on YouTube</a>
 </div>
 
@@ -198,6 +199,7 @@ So the system is simply:
 
 <div class="exercise-actions">
 <a class="exercise-yt" href="https://www.youtube.com/watch?v=RApyTtH6qAo">Watch 1</a>
+<a class="exercise-yt" href="https://www.youtube.com/watch?v=uUjqvxEWcbo">Technique 1</a>
 <a class="exercise-yt" href="https://www.youtube.com/results?search_query=dumbbell+romanian+deadlift">Search on YouTube</a>
 </div>
 
